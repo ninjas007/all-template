@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table tr td,
+        tbody tr td,
+        thead tr th {
+            padding: 4px 3px;
+        }
+
+        .bg-primary {
+            background-color: #ebebeb;
+        }
+
+        /* add background odd and even */
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #tablePanduan tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        #tablePanduan tr td {
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+        #tableTipeTambahan tr td {
+            padding: 4px;
+        }
+
+        #content {
+            margin: 15px;
+            padding: 5px;
+        }
+
+        #tarif tr td {
+            border: 1px solid #f2f2f2;
+        }
+
+        #generatePDF {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body id="content">
+    <div style="margin-bottom: 10px">
+        <div>No. Pesanan</div>
+        <div style="font-size: 16px; font-weight: bold;">
+            1212121212
+        </div>
+    </div>
+    <div style="border-left: 2px solid gold; margin-bottom: 7px;">
+        <div class="bg-primary" style="font-weight: bold; padding: 5px">Dengan Supir</div>
+    </div>
+    <table id="tableInfo" style="border: 1px solid #8e8e8e; margin-bottom: 8px;">
+        <tr>
+            <td colspan="2">
+                <div style="font-size: 14px; font-weight: bold;">Toyota Rebort</div>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">Kota Wilayah Rental</td>
+            <td width="50%">Jakarta</td>
+        </tr>
+        <tr>
+            <td>Durasi Rental</td>
+            <td>17 Juni 2024 - 18 Juni 2024 <br> 1 Day</td>
+        </tr>
+        <tr>
+            <td>Pembelian Tambahan</td>
+            <td>17 Juni 2024 : Luar Kota Zona 1</td>
+        </tr>
+        <tr>
+            <td>Detail Inventory</td>
+            <td>17/08/24 - Alokasi Reguler</td>
+        </tr>
+    </table>
+
+    <table style="margin-bottom: 10px;">
+        <tr>
+            <td colspan="2">Detail Rental</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold;" colspan="2">Detail Pengambilan</td>
+        </tr>
+        <tr>
+            <td width="50%">Waktu Jemput</td>
+            <td width="50%">17 Juni 2024 - 11.00 GMT+07</td>
+        </tr>
+        <tr>
+            <td>Lokasi Jemput</td>
+            <td>Zona Napoleon, Legenda Wisata, Jalan Napoleon Tengah Blok E2 No. 18</td>
+        </tr>
+    </table>
+
+    <table style="margin-bottom: 10px;">
+        <tr>
+            <td colspan="2" style="font-weight: bold;">Detail Penumpang</td>
+        </tr>
+        <tr>
+            <td width="50%">Nama</td>
+            <td width="50%">Ronald Bily Wilian</td>
+        </tr>
+        <tr>
+            <td>No Telp</td>
+            <td>23232323232</td>
+        </tr>
+    </table>
+
+    <table style="margin-bottom: 10px;">
+        <tr>
+            <td style="font-weight: bold;" colspan="2">Detail Pengembalian</td>
+        </tr>
+        <tr>
+            <td width="50%">Tanggal & Waktu Pengembalian</td>
+            <td width="50%">17 June 2024 - 11.00 GMT+07</td>
+        </tr>
+        <tr>
+            <td>Lokasi Pengembalian</td>
+            <td>Gambir, Central Jakarta, Indonesia, Southease Asia</td>
+        </tr>
+    </table>
+
+    <table style="margin-bottom: 15px;">
+        <tr>
+            <td colspan="2" style="font-weight: bold;">Penyedia Rental</td>
+        </tr>
+        <tr>
+            <td width="50%">Nama Supplier</td>
+            <td width="50%">adfasfdsafa</td>
+        </tr>
+        <tr>
+            <td>No Telp</td>
+            <td>2323232111111</td>
+        </tr>
+    </table>
+
+    <table id="tarif" style="margin-bottom: 15px;">
+        <tr>
+            <td colspan="4">
+                <div style="font-weight: bold;">Tarif</div>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Item</td>
+            <td style="text-align: left;">Jumlah</td>
+            <td style="text-align: left;">Harga/Durasi</td>
+            <td style="text-align: left;">Total</td>
+        </tr>
+        <tr>
+            <td>Toyota</td>
+            <td>1</td>
+            <td>IDR 500.000</td>
+            <td>IDR 500.000</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="font-weight: bold;">IDR 500.000</td>
+        </tr>
+    </table>
+
+    <table id="tableTipeTambahan" style="page-break-after: always; margin-bottom: 15px;">
+        <tr>
+            <td width="5%">No</td>
+            <td width="60%">Tipe Tambahan</td>
+            <td width="35%">Harga/Durasi</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Luar Kota</td>
+            <td>IDR 200.000/Hari</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Luar Kota</td>
+            <td>IDR 200.000/Hari</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Luar Kota</td>
+            <td>IDR 200.000/Hari</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Luar Kota</td>
+            <td>IDR 200.000/Hari</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Luar Kota</td>
+            <td>IDR 200.000/Hari</td>
+        </tr>
+    </table>
+
+    <table id="tablePanduan">
+        <tr>
+            <td style="font-weight: bold;" colspan="2">Panduan Tambahan Rental Mobil</td>
+        </tr>
+        <tr>
+            <td width="30%">Luar Zona 1</td>
+            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem neque eligendi ipsam iure nam, dolorem id obcaecati necessitatibus repellat quam quod quisquam aut cumque autem delectus pariatur, illo laudantium nobis!</td>
+        </tr>
+        <tr>
+            <td>Luar Kota Zona 2</td>
+            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, mollitia.</td>
+        </tr>
+        <tr>
+            <td>Luar Kota Zona 3</td>
+            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita dignissimos at quos error rem. Possimus in soluta, deserunt ea labore magni deleniti, voluptate explicabo officiis esse totam dolore nostrum unde. Quis non dignissimos deleniti. Cupiditate, nostrum asperiores magnam quidem expedita repellat inventore nihil dolores numquam, molestiae ullam beatae dolore suscipit!</td>
+        </tr>
+    </table>
+
+    <div id="generatePDF">
+        <button id="btnGenerate">Generate PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script>
+        // Generate PDF when button is clicked
+        document.getElementById('btnGenerate').addEventListener('click', () => {
+            const button = document.getElementById('generatePDF');
+            button.style.display = 'none'; // Hide button
+
+            const element = document.getElementById('content');
+            html2pdf()
+                .from(element)
+                .save()
+                .finally(() => {
+                    button.style.display = 'block'; // Show button again
+                });
+        });
+    </script>
+</body>
+
+</html>

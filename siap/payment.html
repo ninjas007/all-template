@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Siap Order</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+    <!-- End MDBootstrap -->
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+		.subtitle-payment {
+			margin-top: 15px;
+			font-size: 15px;
+		}
+
+		.title-payment {
+			font-size: 30px;
+		}
+
+		.price,
+		.c2-price {
+			font-size: 30px;
+			font-weight: bold;
+			color: #3cb777;
+			
+		}
+
+		.c2-price {
+			color: #f7ad02;
+			position: relative;
+		}
+
+		.c2-price:after {
+			content: "";
+			position: absolute;
+			bottom: -16px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 5px solid #fcc84d;
+		}
+
+		.uniq-price {
+			padding: .8em;
+			font-size: 1.1em;
+			border-radius: 3px;
+			background-color: #fcc84d;
+			width: 80%;
+			text-align: center;
+			color: #000000;
+		}
+
+		.wrap-copy {
+			padding: 12px;
+		}
+
+		.copy {
+			font-size: 14px;
+			text-transform: capitalize !important;
+		}
+
+		.copy:hover,
+		.copy:active {
+			background-color: #636363;
+			color: #ffffff !important;
+			cursor: pointer;
+		}
+
+		.trans-text {
+			text-align: center;
+			font-size: 14px;
+		}
+
+		.norek-card-border {
+			border: .8px dashed #000;
+		}
+
+        .norek-card-border-right {
+            border-right: none;
+        }
+
+        .norek-card-border-bottom {
+            border-bottom: none;
+        }
+
+        .norek-card-border-top {
+            border-top: none;
+        }
+
+        .bri-border-bottom {
+            border-bottom: .8px dashed #000;
+        }
+
+		.norek {
+			padding: 0 0.2rem;
+			padding-top: 2rem;
+			padding-bottom: 1.7rem;
+		}
+
+		.norek p,
+		.norek b {
+			font-size: 16px !important;
+		}
+
+		.text-confirm,
+		.text-confirm a {
+			font-size: 15px;
+		}
+
+		/* size min 645px */
+		@media (max-width: 645px) {
+			.uniq-price {
+				width: 100%;
+			}
+		}
+
+        /* size min 575px */
+		@media (max-width: 575px) {
+			.norek-card-border-right {
+                border-right: .8px dashed #000;
+			}
+
+            .norek-card-border-top {
+                border-top: none !important;
+            }
+
+            .bri-border-bottom {
+                border-bottom: none !important;
+            }
+		}
+</style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="body-wrap mb-3 p-4">
+            <div class="wrap-card">
+                <div class="row mt-3 card">
+                    <div class="col-12 text-center">
+                        <div class="mb-3 mt-5 title-payment">Terimakasih sudah melakukan order 6 Ebook Microsoft Office Lengkap</div>
+                        <p class="subtitle-payment">Untuk menyelesaikan proses order, silahkan transfer sejumlah</p>
+                        <div class="price">
+                            Rp198.<span class="c2-price">950</span>
+                        </div>
+                        <div class="mt-3 d-flex justify-content-center">
+                            <div class="uniq-price"><b>PENTING!</b> Mohon transfer sesuai sampai dengan 3 digit terakhir</div>
+                        </div>
+                        <div class="mt-3 d-flex justify-content-center">
+                            <div class="wrap-copy">
+                                <div class="border copy py-2 px-3 rounded text-dark" onclick="copyText(this, '198950')">
+                                    <i class="fa fa-pencil icon"></i> Salin Jumlah
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt-4">
+                        <div class="trans-text mb-4">ke salah satu bank berikut ini:</div>
+                        <div class="row">
+                            <div class="col-sm-6 norek-card-border norek-card-border-right norek-card-border-bottom">
+                                <div class="norek text-center">
+                                    <div class="mb-4">
+                                        <img src="images/bank-bca.png" class="img-fluid" alt="Bank BCA" width="60%">
+                                    </div>
+                                    <p class="mb-3 text-weight-bold">No. Rek: <b>7910889847</b></p>
+                                    <p class="mb-2">Atas nama: <b>Lifius</b></p>
+                                    <div class="wrap-copy d-flex justify-content-center">
+                                        <div class="border copy py-2 px-3 rounded text-dark" onclick="copyText(this, '7910889847')">
+                                            <i class="fa fa-pencil icon"></i> Salin No. Rekening
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 norek-card-border norek-card-border-bottom">
+                                <div class="norek text-center">
+                                    <div class="mb-4">
+                                        <img src="images/bank-mandiri.png" class="img-fluid" alt="Bank Mandiri" width="60%">
+                                    </div>
+                                    <p class="mb-3 text-weight-bold">No. Rek: <b>1620002851677</b></p>
+                                    <p class="mb-2">Atas nama: <b>Lifius</b></p>
+                                    <div class="wrap-copy d-flex justify-content-center">
+                                        <div class="border copy py-2 px-3 rounded text-dark" onclick="copyText(this, '1620002851677')">
+                                            <i class="fa fa-pencil icon"></i> Salin No. Rekening
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 norek-card-border norek-card-border-right norek-card-border-bottom">
+                                <div class="norek text-center">
+                                    <div class="mb-4">
+                                        <img src="images/bank-bsi.png" class="img-fluid" alt="Bank BSI" width="60%">
+                                    </div>
+                                    <p class="mb-3 text-weight-bold">No. Rek: <b>7174820408</b></p>
+                                    <p class="mb-2">Atas nama: <b>Lifius</b></p>
+                                    <div class="wrap-copy d-flex justify-content-center">
+                                        <div class="border copy py-2 px-3 rounded text-dark" onclick="copyText(this, '7174820408')">
+                                            <i class="fa fa-pencil icon"></i> Salin No. Rekening
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 norek-card-border norek-card-border-bottom bri-border-bottom">
+                                <div class="norek text-center">
+                                    <div class="mb-4">
+                                        <img src="images/bank-bri.png" class="img-fluid" alt="Bank BSI" width="60%">
+                                    </div>
+                                    <p class="mb-3 text-weight-bold">No. Rek: <b>022501104748508</b></p>
+                                    <p class="mb-2">Atas nama: <b>Lifius</b></p>
+                                    <div class="wrap-copy d-flex justify-content-center">
+                                        <div class="border copy py-2 px-3 rounded text-dark" onclick="copyText(this, '022501104748508')">
+                                            <i class="fa fa-pencil icon"></i> Salin No. Rekening
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 norek-card-border">
+                                <div class="norek text-center">
+                                    <div class="mb-4">
+                                        <img src="images/bank-bni.png" class="img-fluid" alt="Bank BNI" width="60%">
+                                    </div>
+                                    <p class="mb-3 text-weight-bold">No. Rek: <b>1584626467</b></p>
+                                    <p class="mb-2">Atas nama: <b>Lifius</b></p>
+                                    <div class="wrap-copy d-flex justify-content-center">
+                                        <div class="border copy py-2 px-3 rounded text-dark" onclick="copyText(this, '1584626467')">
+                                            <i class="fa fa-pencil icon"></i> Salin No. Rekening
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt-4 text-center">
+                        <p class="my-4 text-confirm">Konfirmasikan pembayaran anda di: <a href="konfirmasi.html" target="_blank">Konfirmasi Pembayaran</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    <script type="text/javascript">
+        function copyText(element, text) {
+            // change icon
+            const icon = element.querySelector('.icon');
+            icon.classList.remove('fa-pencil');
+            icon.classList.add('fa-check');
+            setTimeout(() => {
+                icon.classList.remove('fa-check');
+                icon.classList.add('fa-pencil');
+            }, 2500);
+            
+
+            // copy to clipboard
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+        }
+    </script>
+</body>
+
+</html>

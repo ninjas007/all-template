@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+
+        table tr td {
+            /* border: 1px solid black; */
+            text-align: center;
+            padding: 5px;
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 7px 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Male</th>
+                <th>Female</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(4, 1)">17-21</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(4, 0)">17-21</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(5, 1)">22-30</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(5, 0)">22-30</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(6, 1)">31-35</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(6, 0)">31-35</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(7, 1)">36-40</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(7, 0)">36-40</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(8, 1)">41-45</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(8, 0)">41-45</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(9, 1)">46-50</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(9, 0)">46-50</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(10, 1)">51-55</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(10, 0)">51-55</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(11, 1)">56-60</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(11, 0)">56-60</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(12, 1)">61-65</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(12, 0)">61-65</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="send(13, 1)">66-80</button>
+                </td>
+                <td>
+                    <button type="button" onclick="send(13, 0)">66-80</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function send(period, gender) {
+            fetch('test.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(
+                    {period,gender, value: 1}
+                )
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+        }
+    </script>
+</body>
+</html>
+
+<!-- period: 4 - 17-21
+period: 5 - 22-30
+period: 6 - 31-35
+period: 7 - 36-40
+period: 8 - 41-45
+period: 9 - 46-50
+period: 10 - 51-55
+period: 11 - 56-60
+period: 12 - 61-65
+period: 13 - 66-80 -->

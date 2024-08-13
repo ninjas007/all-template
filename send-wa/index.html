@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Send Message Without Save</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            background-image: url('bg.jpg')
+        }
+
+        .valign {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container valign">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nomor" class="h6">Nomor Whatsapp</label>
+                    <input type="text" class="form-control" id="nomor" autofocus placeholder="example: 6282325576616">
+                </div>
+                <div class="form-group">
+                    <label for="pesan" class="h6">Pesan</label>
+                    <textarea name="pesan" id="pesan" rows="5" class="form-control"></textarea>
+                </div>
+                <a href="javascript:void(0)" id="kirim" class="form-control mt-2 btn btn-info">Kirim</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    const button = document.getElementById('kirim');
+
+    button.addEventListener('click', e => {
+        let nomor = document.getElementById('nomor').value;
+        let pesan = document.getElementById('pesan').value;
+
+        button.setAttribute('href', `https://api.whatsapp.com/send/?phone=${nomor}&text=${pesan}`)
+    })
+</script>
+
+</html>

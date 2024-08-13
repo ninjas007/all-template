@@ -1,0 +1,57 @@
+/* Start Globay Style */
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow: unset;
+    margin: 0;
+    line-height: inherit;
+    height: 100%;
+    background-color: #edf3f3;
+}
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.body-wrap {
+    background: rgb(255, 255, 255);
+    width: 680px;
+    max-width: 100%;
+    margin: 0px auto;
+    height: 100%;
+    background-color: #edf3f3;
+}
+
+.wrap-card {
+    padding-bottom: 5rem;
+}
+
+.card {
+    padding: 0rem 5rem; 
+    line-height: 1.4;
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+}
+
+/* size min 425px */
+@media (max-width: 425px) {
+    .card {
+        padding: 0rem 2rem;
+        line-height: 1.4;
+        padding-bottom: 4rem;
+        padding-top: 2rem;
+    }
+}
+
+/* End Globay Style */

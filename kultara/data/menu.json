@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Home",
+        "href": "index.html",
+        "icon": "fa fa-home"
+    },
+    {
+        "id": 2,
+        "title": "Kontak",
+        "href": "contact.html",
+        "icon": "fa fa-phone"
+    },
+    {
+        "id": 4,
+        "title": "Help",
+        "href": "help.html",
+        "icon": "fa fa-pencil"
+    },
+    {
+        "id": 3,
+        "title": "Tentang",
+        "href": "tentang.html",
+        "icon": "fa fa-question"
+    }
+]

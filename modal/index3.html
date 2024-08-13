@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --wrap-width: 90%;
+            --wrap-height: 60%;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            /* overflow-y: auto; */
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1;
+            transition: all 0.5s;
+            animation: fade 0.5s;
+            overflow: auto;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-out {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .fade-out {
+            animation: fade-out 0.1s forwards;
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            width: var(--wrap-width);
+            height: var(--wrap-height);
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            overflow-y: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wrapper-footer {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 3;
+            padding: 5px 20px;
+            width: var(--wrap-width);
+            height: auto;
+            /* Adjust height to content */
+        }
+
+        .close {
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 10px;
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .btn {
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            box-sizing: border-box;
+            border: 0.1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .button-8 {
+            width: 100%;
+            background-color: #e1ecf4;
+            border-radius: 3px;
+            border: 1px solid #7aa7c7;
+            box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+            box-sizing: border-box;
+            color: #39739d;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.15385;
+            margin: 0;
+            outline: none;
+            padding: 8px .8em;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: baseline;
+            white-space: nowrap;
+        }
+
+        .button-8:hover,
+        .button-8:focus {
+            background-color: #b3d3ea;
+            color: #2c5777;
+        }
+
+        .button-8:focus {
+            box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+        }
+
+        .button-8:active {
+            background-color: #a0c7e4;
+            box-shadow: none;
+            color: #2c5777;
+        }
+
+        @media (max-width: 500px) {
+            :root {
+                --wrap-width: 90%;
+            }
+        }
+
+        @media (min-width: 501px) and (max-width: 768px) {
+            :root {
+                --wrap-width: 80%;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            :root {
+                --wrap-width: 70%;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            :root {
+                --wrap-width: 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="openModal" onclick="openModal()">Open Modal</button>
+    <div class="modal" onclick="outsideClick(event)">
+        <div class="wrapper">
+            <div class="header">
+                <h1>Title</h1>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+        </div>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatibus est non voluptates.
+                    Recusandae nesciunt accusantium minima maiores, sapiente voluptatibus nemo, odit, iusto quidem ut
+                    repellendus error molestiae nobis beatae rem. Reprehenderit, nam error nobis maiores eaque nulla
+                    incidunt recusandae labore officia impedit. Esse, quos accusamus eveniet quaerat eius sunt, earum
+                    vel lab
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table style="width:100%">
+                        <tbody>
+                            <tr>
+                                <td class="button-8" aria-haspopup="true" aria-expanded="false"
+                                    style="width:48%;text-align:center;padding:10px 0 10px 0;cursor:pointer;"
+                                    onclick="toggleResize()">
+                                    <font size="6">Cancel</font>
+                                </td>
+
+                                <td class="button-8" aria-haspopup="true" aria-expanded="false"
+                                    style="width:48%;text-align:center;padding:10px 0 10px 0;cursor:pointer;margin-left: 4%;">
+                                    <font size="6">Proceed</font>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript">
+        function openModal() {
+            const root = document.documentElement;
+
+            root.style.setProperty('--wrap-width', '90%');
+            root.style.setProperty('--wrap-height', '60%');
+
+            document.querySelector('.modal').style.display = 'block';
+
+            // Hapus class fade-out jika modal ditampilkan kembali
+            document.querySelector('.modal').classList.remove('fade-out');
+
+            // Reapply center positioning
+            document.querySelector('.wrapper').style.transform = 'translate(-50%, -50%)';
+        }
+
+
+        function closeModal() {
+            document.querySelector('.modal').style.display = 'none';
+
+            setTimeout(() => {
+                document.querySelector('.modal').style.display = 'none';
+                document.querySelector('.modal').classList.remove('fade-out');
+            }, 100);
+        }
+
+        function toggleResize() {
+            const root = document.documentElement;
+            const modal = document.querySelector('.modal');
+            const wrapperFooter = document.querySelector('.wrapper-footer');
+            const wrapper = document.querySelector('.wrapper');
+
+            // Tambahkan class fade-out untuk animasi
+            modal.classList.add('fade-out');
+
+            // Hapus modal setelah animasi selesai
+            setTimeout(() => {
+                if (root.style.getPropertyValue('--wrap-width') === '1080px') {
+                    root.style.setProperty('--wrap-width', '90%');
+                    root.style.setProperty('--wrap-height', '60%');
+                    modal.style.overflow = 'hidden';
+                    // wrapper.style.top = '45%';
+                    wrapperFooter.style.top = '70%';
+                } else {
+                    root.style.setProperty('--wrap-width', '1080px');
+                    root.style.setProperty('--wrap-height', '706px');
+                    modal.style.overflow = 'auto';
+                    // wrapper.style.top = '80%';
+                    // wrapperFooter.style.top = '60%';
+
+                    // check height wrapper
+                    wrapperFooter.style.top = '58.5%';
+                }
+
+                // Reapply center positioning
+                // document.querySelector('.wrapper').style.transform = 'translate(-50%, -50%)';
+
+                modal.classList.remove('fade-out');
+                modal.style.display = 'block';
+            }, 100);
+
+        }
+
+        function outsideClick(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal();
+            }
+        }
+
+        const mediaQuerySmall = window.matchMedia('(max-width: 500px)');
+        const mediaQueryMedium = window.matchMedia('(min-width: 501px) and (max-width: 768px)');
+        const mediaQueryLarge = window.matchMedia('(min-width: 769px) and (max-width: 1024px)');
+        const mediaQueryExtraLarge = window.matchMedia('(min-width: 1025px)');
+
+        function updateMediaQuery() {
+            if (mediaQuerySmall.matches) {
+                document.documentElement.style.setProperty('--wrap-width', '90%');
+            } else if (mediaQueryMedium.matches) {
+                document.documentElement.style.setProperty('--wrap-width', '80%');
+            } else if (mediaQueryLarge.matches) {
+                document.documentElement.style.setProperty('--wrap-width', '70%');
+            } else if (mediaQueryExtraLarge.matches) {
+                document.documentElement.style.setProperty('--wrap-width', '50%');
+            }
+        }
+
+        // updateMediaQuery();
+
+        mediaQuerySmall.addListener(updateMediaQuery);
+        mediaQueryMedium.addListener(updateMediaQuery);
+        mediaQueryLarge.addListener(updateMediaQuery);
+        mediaQueryExtraLarge.addListener(updateMediaQuery);
+
+        window.addEventListener('toggleResize', updateMediaQuery);
+        window.addEventListener('openModal', openModal);
+    </script>
+</body>
+
+</html

@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KERANJANG</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Start MDBootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- End MDBootstrap -->
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .label-form {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 3px
+        }
+
+        .navbar-wrap {
+            border-style: none !important;
+        }
+
+        .table>:not(caption)>*>* {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+            /* border-top: .5px solid #cbcbcb !important; */
+        }
+
+        table tr.cart-item img {
+            width: 75px;
+            border-radius: 10px;
+        }
+
+        table tr.cart-item input.qty-form {
+            padding: 4px 7px;
+            outline: none;
+            width: 100%;
+            border: none;
+            border-top: .5px solid #cbcbcb;
+            border-bottom: .5px solid #cbcbcb;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .qty-minus {
+            border-top-left-radius: 5px !important;
+            border-bottom-left-radius: 5px !important;
+            border-left: .5px solid #cbcbcb !important;
+        }
+
+        .qty-plus {
+            border-top-right-radius: 5px !important;
+            border-bottom-right-radius: 5px !important;
+            border-right: .5px solid #cbcbcb !important;
+            border-left: none;
+        }
+
+        .qty-minus,
+        .qty-plus {
+            border-top: .5px solid #cbcbcb !important;
+            border-bottom: .5px solid #cbcbcb !important;
+        }
+
+        .qty-minus:hover,
+        .qty-plus:hover {
+            cursor: pointer;
+        }
+
+        .remove {
+            position: absolute !important;
+            bottom: 4.5em !important;
+            right: 0em !important;
+            border-radius: 50% !important;
+        }
+
+        .remove:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <section class="body-header p-4 py-3">
+                    <a href="index.html" class="text-white fs18 bold" style="position: absolute;">
+                        <i class="fa fa-arrow-left fs18 bold"></i>
+                    </a>
+                    <div class="text-white bold text-center">
+                        <div class="fs18">Keranjang</div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col-md-12 px-4 py-2">
+                            <table class="table table-hover table-">
+                                <thead>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="pilihSemua" onchange="checklistAll(this)" />
+                                                <label class="form-check-label fs16" for="pilihSemua">Pilih Semua</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="cart-item">
+                                        <td width="80%">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckChecked" checked />
+                                                <label class="form-check-label fs14"
+                                                    for="flexCheckChecked text-muted">ETAWALIN</label>
+                                            </div>
+                                            <div class="d-flex justify-content-start">
+                                                <div style="padding-right: 5px">
+                                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp">
+                                                </div>
+                                                <div class=" align-items-end">
+                                                    <div class="fs14 mb-2 bold">Rp. 120,000</div>
+                                                    <div class="fs12 text-primary bold">1 Paket</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td align="right" valign="bottom">
+                                            <div class="input-group">
+                                                <div class="bold bg-danger text-white p-1 remove" onclick="removeItem(this)">
+                                                    <i class="fa fa-times fs12" style="padding: 3px 5px"></i>
+                                                </div>
+                                                <span class="input-group-text bold qty-minus" onclick="qtyMinus(this)">
+                                                    <i class="fa fa-minus"></i>
+                                                </span>
+                                                <input type="text" class="qty-form" style="padding: 5px" value="1" />
+                                                <span class="input-group-text bold qty-plus" onclick="qtyPlus(this)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="cart-item">
+                                        <td width="80%">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckChecked" checked />
+                                                <label class="form-check-label fs14"
+                                                    for="flexCheckChecked text-muted">ETAWALIN</label>
+                                            </div>
+                                            <div class="d-flex justify-content-start">
+                                                <div style="padding-right: 5px">
+                                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp">
+                                                </div>
+                                                <div class=" align-items-end">
+                                                    <div class="fs14 mb-2 bold">Rp. 120,000</div>
+                                                    <div class="fs12 text-primary bold">1 Paket</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td align="right" valign="bottom">
+                                            <div class="input-group">
+                                                <div class="bold bg-danger text-white p-1 remove" onclick="removeItem(this)">
+                                                    <i class="fa fa-times fs12" style="padding: 3px 5px"></i>
+                                                </div>
+                                                <span class="input-group-text bold qty-minus" onclick="qtyMinus(this)">
+                                                    <i class="fa fa-minus"></i>
+                                                </span>
+                                                <input type="text" class="qty-form" style="padding: 5px" value="1" onkeyup="e." />
+                                                <span class="input-group-text bold qty-plus" onclick="qtyPlus(this)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="cart-item">
+                                        <td width="80%">
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="flexCheckChecked" />
+                                                <label class="form-check-label fs14"
+                                                    for="flexCheckChecked text-muted">ETAWALIN</label>
+                                            </div>
+                                            <div class="d-flex justify-content-start">
+                                                <div style="padding-right: 5px">
+                                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp">
+                                                </div>
+                                                <div class=" align-items-end">
+                                                    <div class="fs14 mb-2 bold">Rp. 120,000</div>
+                                                    <div class="fs12 text-primary bold">1 Paket</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td align="right" valign="bottom">
+                                            <div class="input-group">
+                                                <div class="bold bg-danger text-white p-1 remove" onclick="removeItem(this)">
+                                                    <i class="fa fa-times fs12" style="padding: 3px 5px"></i>
+                                                </div>
+                                                <span class="input-group-text bold qty-minus" onclick="qtyMinus(this)">
+                                                    <i class="fa fa-minus"></i>
+                                                </span>
+                                                <input type="text" class="qty-form" style="padding: 5px" value="1" />
+                                                <span class="input-group-text bold qty-plus" onclick="qtyPlus(this)">
+                                                    <i class="fa fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <nav class="navbar-wrap">
+            <div class="menubar-footer">
+                <div class="row py-4" style="width: 100%;">
+                    <div class="col-6">
+                        <div class="mb-2 fs14 text-muted">Total Harga</div>
+                        <span class="bold fs18">Rp. 240,000</span>
+                    </div>
+                    <div class="col-6 d-flex align-items-end justify-content-end">
+                        <a href="checkout.html">
+                            <div class="btn btn-lg btn-primary fs14 cap" style="border-radius: 20px">Checkout (2)</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript">
+        function removeItem(e) {
+            $(e).parent().parent().parent().remove();
+        }
+
+        function checklistAll(e) {
+            if ($(e).is(':checked')) {
+                $('.cart-item .form-check-input').prop('checked', true);
+                return
+            }
+
+            $('.cart-item .form-check-input').prop('checked', false);
+        }
+
+        function qtyMinus(e) {
+            let qty = $(e).parent().find('.qty-form').val();
+
+            if (qty > 1) {
+                qty = qty - 1;
+                $(e).parent().find('.qty-form').val(qty);
+            }
+        }
+
+        function qtyPlus(e) {
+            let qty = $(e).parent().find('.qty-form').val();
+
+            qty = parseInt(qty) + 1;
+            $(e).parent().find('.qty-form').val(qty);
+        }
+
+        $('.qty-form').keyup(function (e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+            if (this.value == '') this.value = 1;
+        })
+    </script>
+</body>
+
+</html>

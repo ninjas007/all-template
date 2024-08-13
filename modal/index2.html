@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --wrap-width: 450px;
+            --wrap-height: 420px;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1;
+            transition: all 0.5s;
+            animation: fade 0.5s;
+            overflow: auto;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: var(--wrap-width);
+            height: var(--wrap-height);
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            overflow-y: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .close {
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 10px;
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .wrapper-footer {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 3;
+            padding: 5px 20px;
+            width: var(--wrap-width);
+            height: var(--wrap-height);
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .btn {
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            box-sizing: border-box;
+            border: 0.1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* CSS */
+        .button-8 {
+            width: 100%;
+            background-color: #e1ecf4;
+            border-radius: 3px;
+            border: 1px solid #7aa7c7;
+            box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+            box-sizing: border-box;
+            color: #39739d;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.15385;
+            margin: 0;
+            outline: none;
+            padding: 8px .8em;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: baseline;
+            white-space: nowrap;
+        }
+
+        .button-8:hover,
+        .button-8:focus {
+            background-color: #b3d3ea;
+            color: #2c5777;
+        }
+
+        .button-8:focus {
+            box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+        }
+
+        .button-8:active {
+            background-color: #a0c7e4;
+            box-shadow: none;
+            color: #2c5777;
+        }
+
+        @media (max-width: 500px) {
+            :root {
+                --wrap-width: 90%;
+            }
+        }
+
+        @media (min-width: 501px) and (max-width: 768px) {
+            :root {
+                --wrap-width: 80%;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            :root {
+                --wrap-width: 70%;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            :root {
+                --wrap-width: 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="openModal" onclick="openModal()">Open Modal</button>
+    <div class="modal" onclick="outsideClick(event)">
+        <div class="wrapper">
+            <div class="header">
+                <h1>Title</h1>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="content-wrapper">
+                <div class="content">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit. Sit tempora ipsam corporis soluta, quasi similique voluptate quisquam voluptas
+
+                       asi similique voluptate quisquam voluptas
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quaerat commodi possimus, odio earum similique facilis unde laboriosam veniam inventore ducimus sint cupiditate ab nesciunt autem cum non quam voluptatibus temporibus ea? Autem blanditiis nostrum asperiores natus odit ea modi impedit. Ab, quasi iusto doloribus molestiae rem corrupti est voluptas adipisci doloremque ea esse! Minima esse incidunt nemo illo voluptas, voluptatibus libero repellat earum corrupti ab enim iusto voluptatem porro amet odio labore et laboriosam consequatur officia. Earum repellendus assumenda quae modi illum sunt tempora commodi nam laborum aliquid. Ipsa totam veritatis velit. Repudiandae molestias magnam iusto minima id consequatur.
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta reiciendis numquam totam consequatur vel sequi reprehenderit, a officiis nulla magnam optio non, porro ipsam ipsa. Veritatis quas cupiditate unde tenetur consequatur fugiat harum consectetur, possimus consequuntur soluta voluptatibus a explicabo temporibus sint magni quis similique debitis minima recusandae dolor! Blanditiis explicabo nam ut atque eveniet rerum, non eum quo fuga, ullam, neque unde minus reprehenderit facilis numquam mollitia a ipsa sit voluptate sequi nulla? Quidem ipsam quibusdam quae facere distinctio aperiam beatae fugit impedit. Corporis deleniti ut laudantium dolor adipisci accusantium, odit nemo debitis mollitia nobis omnis, inventore, eos blanditiis.
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem culpa quae blanditiis officiis quod facere, atque asperiores, a rem in numquam rerum cumque, doloremque natus quasi error at sint perspiciatis? Sapiente numquam repudiandae error doloribus ullam esse iste perspiciatis quaerat fuga quae enim, consequuntur assumenda tenetur mollitia accusantium nostrum harum. Impedit earum tempora debitis quasi sunt blanditiis adipisci aperiam cupiditate perferendis tempore delectus, facere cum repellat distinctio nihil ea recusandae nobis dolor id, repudiandae minima? Debitis nam eius neque perferendis labore odio at quam, necessitatibus aperiam repellendus tempora obcaecati repellat, corporis saepe nihil totam dolorum eligendi dolor quasi incidunt. Beatae.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper-footer">
+            <table style="width:100%">
+                <tbody>
+                    <tr>
+                        <td class="button-8" aria-haspopup="true" aria-expanded="false"
+                            style="width:48%;text-align:center;padding:10px 0 10px 0;cursor:pointer;" onclick="toggleResize()">
+                            <font size="6">Cancel</font>
+                        </td>
+
+                        <td class="button-8" aria-haspopup="true" aria-expanded="false"
+                            style="width:48%;text-align:center;padding:10px 0 10px 0;cursor:pointer;margin-left: 4%;">
+                            <font size="6">Proceed</font>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function openModal() {
+            const wrapper = document.querySelector('.wrapper');
+            const wrapperFooter = document.querySelector('.wrapper-footer');
+
+            wrapper.style.width = '450px';
+            wrapper.style.height = '420px';
+
+            wrapperFooter.style.width = '450px';
+            wrapperFooter.style.height = '420px';
+
+
+            document.querySelector('.modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.querySelector('.modal').style.display = 'none';
+        }
+
+        function toggleResize() {
+            const wrapper = document.querySelector('.wrapper');
+            const wrapperFooter = document.querySelector('.wrapper-footer');
+            const modal = document.querySelector('.modal');
+
+            if (wrapper.style.width === '1080px' && wrapperFooter.style.width === '1080px') {
+                wrapper.style.width = '450px';
+                wrapper.style.height = '420px';
+
+                wrapperFooter.style.width = '450px';
+                wrapperFooter.style.height = '420px';
+            } else {
+                wrapper.style.width = '1080px';
+                wrapper.style.height = '706px';
+                wrapper.style.marginTop = '100px';
+
+                wrapperFooter.style.width = '1080px';
+                wrapperFooter.style.height = '706px';
+                wrapperFooter.style.marginTop = '100px';
+            }
+        }
+
+        function outsideClick(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>REGISTER</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Start MDBootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- End MDBootstrap -->
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        #wrapper {
+            min-height: 1000px;
+        }
+
+        .label-form {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 3px
+        }
+
+        .role label {
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <section class="body-header p-4 py-3">
+                    <a href="index.html" class="text-center text-white" style="font-size: 18px; font-weight: bold;">
+                        <i class="fa fa-arrow-left" style="font-size: 18px; font-weight: bold"></i> Kembali
+                    </a>
+                    <p class="text-white mt-3" style="font-size: 14px;">
+                        Silahkan Registrasi terlebih dahulu <br> untuk mendapatkan penghasilan tambahan dari kami
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col-md-12 p-5">
+                            <form>
+                                <div class="text-center mb-3">
+                                    <p>Sign up with:</p>
+                                    <button type="button" class="btn btn-secondary btn-floating mx-1">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-secondary btn-floating mx-1">
+                                        <i class="fab fa-google"></i>
+                                    </button>
+
+                                </div>
+
+                                <p class="text-center">or:</p>
+
+                                <div class="form-group mb-3">
+                                    <label class="label-form" for="nama">Nama</label>
+                                    <input type="text" id="nama" name="nama" class="form-control"
+                                        placeholder="Masukkan Nama Lengkap">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="label-form" for="noHp">No Hp</label>
+                                    <input type="text" id="noHp" name="no_hp" class="form-control"
+                                        placeholder="Masukkan No Hp/WA Aktif">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="informasi" class="label-form">Tahu Informasi Dari</label>
+                                    <select name="informasi" id="informasi" class="form-control js-select2">
+                                        <option value="facebook">Facebook</option>
+                                        <option value="instagram">Instagram</option>
+                                        <option value="twitter">Twitter</option>
+                                        <option value="whatsapp">Whatsapp</option>
+                                        <option value="lainnya">Lainnya</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="alamat" class="label-form">Alamat</label>
+                                    <textarea name="alamat" id="alamat" class="form-control" rows="5"
+                                        placeholder="Masukkan Alamat"></textarea>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="role" class="label-form">Mendaftar Sebagai</label>
+                                    <div class="form-check role">
+                                        <input class="form-check-input" type="radio" name="role" id="affiliator" />
+                                        <label class="form-check-label" for="affiliator"> Affiliator </label>
+                                    </div>
+
+                                    <div class="form-check role">
+                                        <input class="form-check-input" type="radio" name="role" id="reseller" />
+                                        <label class="form-check-label" for="reseller"> Reseller
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Checkbox -->
+                                <div class="form-check d-flex justify-content-center mb-4">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="rule"
+                                        checked aria-describedby="registerCheckHelpText" />
+                                    <label class="form-check-label" style="padding-top: 3px">
+                                        <a class="text-primary" data-mdb-toggle="modal"
+                                            data-mdb-target="#exampleModal">Saya telah membaca dan menyetujui
+                                            persyaratannya</a>
+                                    </label>
+                                </div>
+
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">
+                                    <i class="fa fa-user"></i>&nbsp;Sign Up
+                                </button>
+                            </form>
+                            <p class="text-center">Sudah punya akun? Silahkan <a href="login.html" class="text-primary">Login</a></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Rules-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Persayaratan Affiliator</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.js-select2').select2({
+                width: 'resolve'
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<div class="col-12 px-4">
+    <div class="my-3 d-flex justify-content-between">
+        <div class="h5 pt-1">
+            <i class="fa fa-users"></i> Data Tamu <span class="badge bg-info"
+                id="totalPerson">0</span>
+        </div>
+        <div>
+            <button type="button" class="btn btn-info btn-sm" id="addPerson">
+                <i class="fa fa-plus"></i> Tambah
+            </button>
+        </div>
+    </div>
+
+    <div id="person" class="mb-3">
+        <div class="card p-3 mb-5 border">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="nama-0">Nama</label>
+                        <input type="text" id="nama-0" name="nama[]" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="title-0">Title</label>
+                        <select name="title[]" id="title-0" class="form-control">
+                            <option value="Mr.">Mr.</option>
+                            <option value="Ms.">Ms.</option>
+                            <option value="Tuan">Tuan</option>
+                            <option value="Ny.">Ny.</option>
+                            <option value="Bapak">Bapak</option>
+                            <option value="Ibu">Ibu</option>
+                        </select>
+                    </div>
+
+                    <div style="position: absolute; right: -5px; top: -5px">
+                        <span class="badge bg-danger btn-delete-person">
+                            <i class="fa fa-times"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="identitas-0">KTP/NIK</label>
+                        <input type="text" id="identitas-0" name="identitas[]"
+                            class="form-control" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="nomorPlat-0">Nomor Plat</label>
+                        <input type="text" id="nomorPlat-0" name="nomorPlat[]"
+                            class="form-control" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="foto-0">Foto</label>
+                        <input type="file" class="form-control" id="foto-0" name="foto[]" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" id="submit" class="btn btn-info btn-block">
+        <i class="fa fa-paper-plane"></i> Submit
+     </button>
+</div>
+
+
+<script src="js/person.js"></script>

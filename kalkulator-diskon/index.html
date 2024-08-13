@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Kalkulator Gopay</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center text-center">
+            <div class="col-sm-12 col-lg-10">
+                <h5 class="mb-5">Kalkulator Diskon</h5>
+                <table class="table table-striped" id="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Bayar</th>
+                            <th scope="col">
+                                <button class="btn btn-primary" id="tambah">Tambah</button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" align="right">Subtotal (Rp)</td>
+                            <td colspan="2"><input type="text" class="form-control" id="subtotal" value="0" placeholder="Subtotal sebelum ada diskon dan potongan lainnya"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="right">Diskon (%)</td>
+                            <td colspan="2"><input type="text" class="form-control" id="diskon" value="0"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="right">Fee Lainnya (Rp)</td>
+                            <td colspan="2"><input type="text" class="form-control" id="feeLainnya" value="0" placeholder="contoh: fee gojek, ongkir, dll"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="right">Total Belanja (Rp)</td>
+                            <td colspan="2"><input type="text" class="form-control" value="0" id="totalBelanja" readonly></td>
+                        </tr>
+                    </tfoot>
+                    
+                </table>
+
+                <button class="btn btn-success float-right" onclick="hitungTotal()">Hitung Total</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(`#table tbody`).append(trAdd());
+
+        $('#tambah').click(function() {
+            $('#table tbody').append(trAdd());
+            trRemove();
+        })
+
+        function hitungTotal() {
+            let totalRows = $('#table tbody tr').length;
+            let diskon = $('#diskon').val();
+            let fee = $('#feeLainnya').val();
+            let subtotal = 0;
+            let arrTotalItem = $('.total-item');
+            let arrBayarItem = $('.total-bayar');
+
+            // fee dikurangin diskon;
+            fee = fee - (fee * diskon / 100);
+
+            // fee setiap orang
+            let feeDibagiRow = fee / totalRows;
+
+            for (i = 0; i < $('#table tbody tr').length; i++) {
+                let totalItem = parseInt(arrTotalItem[i].value);
+                let diskonPerorang = totalItem * (parseInt(diskon) / 100);
+                let totalBayarPerorang = totalItem - diskonPerorang + feeDibagiRow;
+
+                arrBayarItem[i].value = totalBayarPerorang;
+                subtotal += totalItem;
+            }
+
+            // subtotal
+            $('#subtotal').val(subtotal)
+
+            // diskon setelah ada subtotal
+            diskon = parseInt(diskon) / 100 * subtotal
+
+            // total akhir setelah potongan dan diskon
+            totalBelanja = subtotal + parseInt(fee) - diskon;
+            $('#totalBelanja').val(totalBelanja)
+        }
+
+        function trAdd() {
+            return `<tr>
+                <td>
+                    <input type="text" class="form-control nama" placeholder="Nama pembeli">
+                </td>
+                <td>
+                    <input type="text" class="form-control deskripsi" placeholder="Deskripsi item">
+                </td>
+                <td>
+                    <input type="text" class="form-control total-item" placeholder="Total harga" value="0">
+                </td>
+                <td>
+                    <input type="text" class="form-control total-bayar" placeholder="Total bayar" value="0" readonly>
+                </td>
+                <td> 
+                    <button class="btn btn-danger remove">Hapus</button>
+                </td>
+            </tr>`
+        }
+
+        function trRemove() {
+            $('.remove').click(function() {
+                $(this).parent().parent().remove();
+            })
+        }
+        trRemove();
+
+
+    </script>
+</body>
+
+</html>

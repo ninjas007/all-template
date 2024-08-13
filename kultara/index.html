@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HOME</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Start MDBootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- End MDBootstrap -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="body-wrap mb-3">
+            <div class="body">
+                <div class="body-header">
+                    <div class="body-header-content">
+                        HOME
+                    </div>
+                </div>
+                <div class="body-content p-2 bg-white">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="https://cdn0-production-images-kly.akamaized.net/k-8T2_IXluILxIDDBwJvGuzAtkE=/0x120:3000x1811/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3282059/original/075075700_1604028408-shutterstock_1788721670.jpg"
+                                class="img-fluid" alt="gambar makanan">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 80px">
+                        <div class="col-12">
+                            <!-- Tabs navs -->
+                            <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
+                                <!-- load content from js -->
+                            </ul>
+
+
+                            <!-- Tabs content -->
+                            <div class="tab-content" id="ex2-content">
+                                <div class="tab-pane fade-in show active" id="ex3-tabs-1" role="tabpanel"
+                                    aria-labelledby="ex3-tab-1">
+                                    <div class="" id="result"></div>
+                                </div>
+                            </div>
+                            <!-- Tabs content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-wrap">
+            <div class="menubar-footer">
+                <!-- load content from js -->
+            </div>
+        </nav>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+        function searchWikipedia() {
+            const resultElement = document.getElementById('result');
+            const searchQuery = 'Rendang';
+            const apiUrl = `https://id.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=${encodeURIComponent(
+                searchQuery
+            )}&exintro=1&origin=*`;
+
+            resultElement.innerHTML = `<p class="text-center">Get data from wikipedia</p>`
+
+            fetch(apiUrl)
+                .then((response) => response.json())
+                .then((data) => {
+                    // Get the page ID from the response (assuming there is only one page returned)
+                    const pageId = Object.keys(data.query.pages)[0];
+
+                    // Extract the page information
+                    const page = data.query.pages[pageId];
+                    const title = page.title;
+                    const extract = page.extract;
+
+                    // Display the result on the webpage
+                    
+                    resultElement.innerHTML = `
+                        <div class="text-muted mb-3" style="font-style: italic">Sumber: wikipedia</div>
+                        <h5 class="card-title">${title}</h5>
+                        <p class="text-muted">${extract}</p>
+                        <a href="https://id.wikipedia.org/wiki/Rendang" target="_blank">Lihat Selengkapnya</a>
+                        <br>
+                    `;
+                })
+                .catch((error) => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+
+        searchWikipedia()
+    </script>
+</body>
+
+</html>

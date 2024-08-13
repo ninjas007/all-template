@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "INFO",
+        "href": "index.html"
+    },
+    {
+        "id": 2,
+        "title": "RESEP",
+        "href": "resep.html"
+    },
+    {
+        "id": 4,
+        "title": "LOKASI",
+        "href": "tersedia.html"
+    },
+    {
+        "id": 3,
+        "title": "REVIEW",
+        "href": "review.html"
+    }
+]

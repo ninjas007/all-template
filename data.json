@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "image": "assets/images/kultara.png",
+        "title": "Kultara",
+        "link": "https://kultara.asiamandiri.id",
+        "description": "Website review masakan Indonesia",
+        "publish": "8 May 2023"
+    },
+    {
+        "id": 2,
+        "image": "assets/images/kulakin.png",
+        "title": "Kulakin",
+        "link": "kulakin/index.html",
+        "description": "Template html untuk website affiliator",
+        "publish": "8 May 2023"
+    },
+    {
+        "id": 3,
+        "image": "assets/images/kasir.png",
+        "title": "Kasir",
+        "link": "kasir/index.html",
+        "description": "Template html kasir online",
+        "publish": "8 May 2023"
+    },
+    {
+        "id": 4,
+        "image": "send-wa/bg.jpg",
+        "title": "Send WA",
+        "link": "send-wa/index.html",
+        "description": "Kirim Pesan Wa tanpa simpan nomor",
+        "publish": "13 April 2024"
+    },
+    {
+        "id": 5,
+        "image": "kalkulator-diskon/kalkulator.png",
+        "title": "Kalkulator Diskon",
+        "link": "kalkulator-diskon/index.html",
+        "description": "Hitung pembagian diskon",
+        "publish": "13 April 2024"
+    }
+]

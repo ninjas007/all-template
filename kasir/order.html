@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .modal.left .modal-dialog {
+            position: fixed;
+            right: 0;
+            margin: auto;
+            width: 640px;
+            height: 100%;
+            overflow-y: auto;
+            -webkit-transform: translate3d(0%, 0, 0);
+            -ms-transform: translate3d(0%, 0, 0);
+            -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+        }
+
+        .modal.left .modal-content {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .modal.right .modal-body {
+            padding: 15px 15px 80px;
+        }
+
+        .modal.right.fade .modal-dialog {
+            left: -320px;
+            -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+            -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+            -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+            transition: opacity 0.3s linear, left 0.3s ease-out;
+        }
+
+        .modal.right.fade.show .modal-dialog {
+            right: 0;
+        }
+
+        .modal-content {
+            border-radius: 0;
+            border: none;
+            background-color: var(--primary-bg-color) !important;
+        }
+
+        .modal-footer {
+            border-top: none !important;
+        }
+
+        .modal-header {
+            border-bottom: none !important;
+            background-color: var(--primary-bg-color) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-light background-card">
+            <a href="/" class="mb-3">
+                LOGO
+            </a>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="mb-3">
+                    <a href="index.html">
+                        <i class="fa fa-home"></i> <br>
+                        Home
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="menu.html" class="nav-link">
+                        <i class="fa fa-list"></i>
+                        <br>
+                        Menu
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="order.html" class="nav-link background-primary active" aria-current="page">
+                        <i class="fa fa-hamburger"></i>
+                        <br>
+                        Order
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="promo.html" class="nav-link">
+                        <i class="fa fa-tag"></i>
+                        <br>
+                        Promos
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="setting.html" class="nav-link">
+                        <i class="fa fa-cog"></i>
+                        <br>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center dropdown-toggle" id="dropdownUser2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                </a>
+                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="d-flex justify-content-between">
+                <div id="menu">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="card background-card p-2">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <select name="category" class="custom-form-sm pd-3">
+                                            <option value="">Semua Kategori</option>
+                                            <option value="">Makanan</option>
+                                            <option value="">Minuman</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="custom-form-sm" placeholder="Cari menu">
+                                    </div>
+                                    <div class="col-1">
+                                        <button class="btn-filter" style="padding: 2px">
+                                            <i class="fa fa-filter fs-10"></i> Filter
+                                         </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="menuItem">
+                        <!-- product list -->
+                    </div>
+                </div>
+                <div id="order">
+                    <div class="card background-card" id="contentOrder">
+                        <div class="card-header sticky-header background-card d-flex justify-content-between">
+                            <h4><i class="fa fa-hamburger"></i> Order</h4>
+                            <div class="p-2" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer;">
+                                <i class="fa fa-cogs"></i>
+                            </div>
+                        </div>
+                        <div class="card-body" id="bodyOrder">
+
+                        </div>
+                        <div class="card-footer sticky-footer background-card">
+                            <div class="row">
+                                <div class="col-12 text-right">
+                                    <div class="total-items">
+                                        Total Item (Rp): <span id="totalItems">0</span>
+                                    </div>
+                                    <div class="tax-order">
+                                        Tax/Service (Rp): <span id="tax">0</span>
+                                    </div>
+                                    <div class="diskon-order">
+                                        Total Diskon (Rp): <span id="diskon">0</span>
+                                    </div>
+                                    <div class="h3 d-flex justify-content-between text-info">
+                                        <div>
+                                            Total Bayar
+                                        </div>
+                                        <div id="total">
+                                            <!-- text total -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="h5 d-flex justify-content-between text-warning font-weight-bold">
+                                        <div>
+                                            Sisa
+                                        </div>
+                                        <div id="sisa">
+                                            <!-- text sisa -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="text" class="form-control font-weight-bold" value="" id="bayar"
+                                        onkeyup="return inputPay(this.value)">
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-info form-control">
+                                        <i class="fa fa-calculator"></i> Bayar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row mt-3" id="listMoney">
+                                <!-- money list -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal left fade" id="exampleModal" tabindex="" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card-title mb-4 d-flex justify-content-between">
+                        <div class="h5">
+                            <i class="fa fa-cogs"></i> Setting
+                        </div>
+                        <div>
+                            <div data-dismiss="modal" aria-label="Close" style="cursor: pointer;">
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tax">Tax / Service</label>
+                        <input type="number" class="form-control" id="taxGlobal" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="diskon">Diskon Global</label>
+                        <input type="number" class="form-control" id="diskonGlobal" value="0">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" onclick="saveSetting()">Simpan</button>
+                    <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Keluar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/main.js"></script>
+
+    <script type="text/javascript">
+        const state = {
+            carts: [
+                // {
+                //     id: 1,
+                //     item: 'Burger Biasa',
+                //     price: 10000,
+                //     discount: 2000,
+                //     qty: 2,
+                //     note: 'Jangan pedas'
+                // },
+                // {
+                //     id: 2,
+                //     item: 'Bakso Biasa',
+                //     price: 10000,
+                //     discount: 1000,
+                //     qty: 1,
+                //     note: ''
+                // },
+                // {
+                //     id: 3,
+                //     item: 'Mie Goreng',
+                //     price: 12000,
+                //     discount: 0,
+                //     qty: 1,
+                //     note: ''
+                // },
+            ],
+            products:  [
+                {
+                    id: 1,
+                    name: 'Burger Biasa',
+                    image: 'images/burger.jpeg',
+                    price: 10000,
+                    description: 'Bakso Ayam adalah bakso yang terbuat dari daging ayam yang diolah hingga lembut, dibentuk bulat, dan direbus. Teksturnya kenyal dan rasanya',
+                    discount: 2000
+                },
+                {
+                    id: 2,
+                    name: 'Bakso Biasa',
+                    image: 'images/bakso.jpeg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quidem! ',
+                    price: 10000,
+                    discount: 1000
+                },
+                {
+                    id: 3,
+                    name: 'Mie Goreng',
+                    image: 'images/mie-goreng.jpeg',
+                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quidem!',
+                    price: 12000,
+                    discount: 0
+                },
+            ],
+            order: {
+                grandTotal: 0,
+                totalItems: 0,
+                discountTotal: 0,
+                diskon: 0,
+                tax: 0
+            },
+            listMoney: [
+                {
+                    id: 0,
+                    money: 0
+                },
+                // {
+                //     id: 1,
+                //     money: 5000
+                // },
+                // {
+                //     id: 2,
+                //     money: 10000
+                // },
+                {
+                    id: 3,
+                    money: 20000
+                },
+                {
+                    id: 4,
+                    money: 50000
+                },
+                {
+                    id: 5,
+                    money: 100000
+                }
+            ]
+        }
+
+        $(document).ready(function () {
+            getProducts();
+            getCarts();
+            getQtyPerItem();
+        })
+
+        function autofocusBayar() {
+            $('#bayar').focus();
+        }
+
+        function getListMoney() {
+            let htmlContent = '';
+            state.listMoney.forEach(item => {
+                htmlContent += `<div class="col-md-3 text-center">
+                    <div class="list-money mb-3" onclick="fillPay(${item.money})">
+                        <i class="fa fa-coins"></i> <br> Rp. ${item.id == 0 ? parseIntToNominal(state.order.grandTotal) : parseIntToNominal(item.money)}
+                    </div>
+                </div>`;
+            });
+
+            $('#listMoney').html(htmlContent);
+        }
+
+        function getQtyPerItem() {
+            let htmlContent = '';
+            state.carts.forEach(cart => {
+                $(`#qtyItem${cart.id}`).text(cart.qty);
+            })
+        }
+
+        function getProducts() {
+            let htmlContent = '';
+            state.products.forEach(product => {
+                htmlContent += `<div class="col-3 mb-4">
+                    <div class="card background-card">
+                        <div class="p-2">
+                            <div class="card-menu" onclick="addToCart(${product.id})">
+                                <img src="${product.image}"
+                                    class="card-img rounded img-fluid" style="height: 150px; object-fit: cover">
+                            </div>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="card-title mt-1">${product.name}</div>
+                                    <div class="color-primary">
+                                        <div class="price">Rp. ${parseIntToNominal(product.price)}</div>
+                                    </div>
+                                </div>
+                                <div class="col-2 d-flex flex-column align-items-center">
+                                    <div class="text-right" style="position: absolute; top: 25px; right: 15px; background-color: var(--primary2-color); border-radius: 5px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer" onclick="addToCart(${product.id})">
+                                        <span style="font-size: 18px; line-height: 0; font-weight: bold; color: var(--secondary-color)" id="qtyItem${product.id}">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            });
+
+            $('#menuItem').html(htmlContent);
+        }
+
+        function getCarts() {
+            if (state.carts.length > 0) {
+                let htmlContent = '';
+                state.carts.forEach(cart => {
+                    htmlContent += `<tr class="item-order">
+                            <td width="5%">
+                                <i class="fa fa-times bg-danger delete" onclick="deleteOrder(this, ${cart.id})"></i>
+                            </td>
+                            <td width="75%">
+                                <div>
+                                    <div class="item-price">
+                                        <div class="item-product-order">${cart.item} (@Rp. ${parseIntToNominal(cart.price)})</div>
+                                    </div>
+                                    <div class="item-calculate">
+                                        ${contentNote(cart.note)}
+                                        <div class="item-discount">
+                                            Diskon Item: Rp. <span class="discount">${parseIntToNominal(cart.discount)}</span>
+                                        </div>
+                                        <div class="item-subtotal">
+                                            Subtotal: Rp. <span class="subtotal">${parseIntToNominal(cart.price * cart.qty - (cart.discount * cart.qty))}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="20%">
+                                <div class="d-flex justify-content-between">
+                                    <div class="mr-1 qty-minus" onclick="qtyMinus(this, ${cart.id})">
+                                        <i class="fa fa-minus"></i>
+                                    </div>
+                                    <div class="qty">
+                                        <input type="text" value="${cart.qty}" class="qty-form" onkeyup="updateQty(${cart.id}, this.value)">
+                                    </div>
+                                    <div class="ml-1 qty-plus" onclick="qtyPlus(this, ${cart.id})">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>`;
+                });
+
+                $('#bodyOrder').html(`<table id="tableOrder">${htmlContent}</table>`);
+            } else {
+                let htmlContent = `<div class="text-center">
+                                    <img src="images/empty-cart.png" class="img-fluid" style="opacity: 0.5; margin-top: 100px" width="300">
+                                </div>`
+                $('#bodyOrder').html(`${htmlContent}`);
+            }
+
+            getQtyPerItem();
+            grandTotal();
+            getListMoney();
+            autofocusBayar();
+            setTextAllContentWithJs();
+        }
+
+        function grandTotal() {
+            setGrandTotal();
+            setDiscountTotal();
+            setTotalItems();
+            setTextNotPaid();
+            $('#total').text(`Rp. ${parseIntToNominal(state.order.grandTotal)}`);
+        }
+
+        function setGrandTotal() {
+            const taxGlobal = state.order.tax;
+            const diskonGlobal = state.order.diskon;
+            const subtotal = state.carts.reduce((subtotal, cart) => {
+                return subtotal + (cart.price * cart.qty) - (cart.discount * cart.qty);
+            }, 0);
+
+            // formula: subtotal(after - discount item) - discountGlobal + taxGlobal
+            state.order.grandTotal = subtotal - parseInt(diskonGlobal) + parseInt(taxGlobal);
+        }
+
+        function setTotalItems() {
+            state.order.totalItems = state.carts.reduce((totalItems, cart) => {
+                return totalItems + (cart.price * cart.qty);
+            }, 0);
+        }
+
+        function setDiscountTotal() {
+            state.order.discountTotal = state.carts.reduce((discountTotal, cart) => {
+                return discountTotal + cart.discount * cart.qty;
+            }, 0);
+        }
+
+        function inputPay(value) {
+            var number = parseInt(value.replace(/[^0-9]/g, ''), 10);
+            var formatted = formatPay(number || 0);
+            $('#bayar').val(formatted);
+            getCarts();
+        }
+
+        function fillPay(val = '') {
+            if (val == '') {
+                setGrandTotal()
+                val = state.order.grandTotal
+            }
+
+            $('#bayar').val(parseIntToNominal(val));
+            getCarts();
+        }
+
+        function saveSetting() {
+            state.order.tax = $('#taxGlobal').val();
+            state.order.diskon = $('#diskonGlobal').val();
+
+            getCarts();
+
+            $('.close-modal').trigger('click');
+        }
+    </script>
+    <!-- script for update text content -->
+    <script type="text/javascript">
+        function setTextAllContentWithJs() {
+            $('#tax').text(`${parseIntToNominal(state.order.tax)}`);
+            $('#diskon').text(`${parseIntToNominal(state.order.discountTotal)}`);
+            $('#totalItems').text(`${parseIntToNominal(state.order.totalItems)}`);
+            $('#taxGlobal').val(state.order.tax);
+            $('#diskonGlobal').val(state.order.diskon);
+        }
+
+        function contentNote(note) {
+            if (note != '') {
+                return `<div class="text-small text-info" style="font-style: italic;">Note: ${note}</div>`
+            }
+
+            return '';
+        }
+
+        function setTextNotPaid() {
+            const bayar = $('#bayar').val() || '0';
+            const notPaid = parseNominalToInt(bayar) - state.order.grandTotal;
+
+            $('#sisa').text(`Rp. ${parseIntToNominal(notPaid)}`);
+        }
+    </script>
+
+    <!-- crud carts, except getcarts -->
+    <script type="text/javascript">
+
+        // add cart
+        function addToCart(productId) {
+            // find the product
+            let product = state.products.find(product => product.id == productId);
+
+            // increase qty when product is already in cart
+            let index = state.carts.findIndex(item => item.id === productId);
+            if (index != -1) {
+                state.carts[index].qty++;
+            } else {
+                state.carts.push({
+                    id: product.id,
+                    item: product.name,
+                    price: product.price,
+                    discount: product.discount,
+                    qty: 1,
+                    note: ''
+                });
+            }
+
+            getCarts();
+        }
+
+        function qtyMinus(elem, id) {
+            let qty = $(elem).parent().find('.qty-form').val();
+
+            if (qty > 1) {
+                qty = qty - 1;
+                $(elem).parent().find('.qty-form').val(qty);
+
+                // update qty
+                updateQty(id, qty);
+            }
+        }
+
+        function qtyPlus(elem, id) {
+            let qty = $(elem).parent().find('.qty-form').val();
+
+            qty = parseInt(qty) + 1;
+            $(elem).parent().find('.qty-form').val(qty);
+
+            // update qty
+            updateQty(id, qty);
+        }
+
+        function updateQty(id, qty) {
+            let index = state.carts.findIndex(item => item.id === id);
+            if (index != -1) {
+                state.carts[index].qty = qty;
+            }
+
+            // update cart
+            getCarts();
+        }
+
+        function deleteOrder(elem, id) {
+            $(elem).parent().parent().remove();
+
+            // update cart
+            let index = state.carts.findIndex(item => item.id === id);
+            if (index != -1) {
+                state.carts.splice(index, 1);
+            }
+
+            // update cart
+            getCarts();
+        }
+    </script>
+</body>
+
+</html>

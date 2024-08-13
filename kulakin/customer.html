@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CUSTOMER</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Start MDBootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- End MDBootstrap -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .favorit:hover {
+            cursor: pointer;
+            font-size: 20px;
+            color: #3A71CA
+        }
+
+        .icon-customer {
+            font-size: 32px; 
+            font-weight: bold; 
+            padding: 5px 8px; 
+            padding-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <section class="body-header p-4 py-3">
+                    <div class="h3 text-white text-center">Daftar Customer</div>
+                </section>
+                <section class="body-content p-2 bg-white">
+                    <div class="row" style="margin-bottom: 80px">
+                        <div class="col-12">
+                            <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link text-muted active" id="ex3-tab-1" href="customer.html"
+                                        role="tab" aria-controls="ex3-tabs-1" aria-selected="true">Semua</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link text-muted " id="ex3-tab-2" href="customer-favorit.html" role="tab"
+                                        aria-controls="ex3-tabs-2" aria-selected="true">Favorit</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="ex2-content">
+                                <form class="form-inline mb-4">
+                                    <div class="input-group">
+                                        <input type="text" class="search-form border" aria-describedby="basic-addon1" placeholder="Cari customer">
+                                        <div class="input-group-prepend bg-primary form-icon border">
+                                            <button class="input-group-text text-white border-0 bold"><i class="fa fa-search"></i>&nbsp;Cari</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="tab-pane fade-in show active" id="ex3-tabs-1" role="tabpanel"
+                                    aria-labelledby="ex3-tab-1">
+                                    <div class="card mb-2 fade-in">
+                                        <div class="card-body py-2">
+                                            <div class="card-title mb-2">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex">
+                                                        <i class="fa fa-user text-primary icon-customer"></i>
+                                                        <div>
+                                                            <a href="customer-detail.html" class="fs16 text-primary bold" target="_blank">John Doe</a>
+                                                            <br>
+                                                            <div class="text-muted mt-2">6232323232232</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="favorit"  data-mdb-toggle="tooltip" title="Jadikan Favorit">
+                                                        <i class="fa fa-thumbs-up fs16" data-value="1"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-text mb-2" style="padding-right: 5px">
+                                                <p class="text-muted miring">
+                                                    <i class="fa fa-calendar text-primary"></i> Terdaftar Sejak 27 Februari 2023
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 fade-in">
+                                        <div class="card-body py-2">
+                                            <div class="card-title mb-2">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex">
+                                                        <i class="fa fa-user text-primary icon-customer"></i>
+                                                        <div>
+                                                            <a href="customer-detail.html" class="fs16 text-primary bold" target="_blank">John Doe</a>
+                                                            <br>
+                                                            <div class="text-muted mt-2">6232323232232</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="favorit"  data-mdb-toggle="tooltip" title="Jadikan Favorit">
+                                                        <i class="fa fa-thumbs-up fs16" data-value="1"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-text mb-2" style="padding-right: 5px">
+                                                <p class="text-muted miring">
+                                                    <i class="fa fa-calendar text-primary"></i> Terdaftar Sejak 27 Februari 2023
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 fade-in">
+                                        <div class="card-body py-2">
+                                            <div class="card-title mb-2">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex">
+                                                        <i class="fa fa-user text-primary icon-customer"></i>
+                                                        <div>
+                                                            <a href="customer-detail.html" class="fs16 text-primary bold" target="_blank">John Doe</a>
+                                                            <br>
+                                                            <div class="text-muted mt-2">6232323232232</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="favorit"  data-mdb-toggle="tooltip" title="Jadikan Favorit">
+                                                        <i class="fa fa-thumbs-up fs16" data-value="1"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-text mb-2" style="padding-right: 5px">
+                                                <p class="text-muted miring">
+                                                    <i class="fa fa-calendar text-primary"></i> Terdaftar Sejak 27 Februari 2023
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 fade-in">
+                                        <div class="card-body py-2">
+                                            <div class="card-title mb-2">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex">
+                                                        <i class="fa fa-user text-primary icon-customer"></i>
+                                                        <div>
+                                                            <a href="customer-detail.html" class="fs16 text-primary bold" target="_blank">John Doe</a>
+                                                            <br>
+                                                            <div class="text-muted mt-2">6232323232232</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="favorit"  data-mdb-toggle="tooltip" title="Jadikan Favorit">
+                                                        <i class="fa fa-thumbs-up fs16" data-value="1"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-text mb-2" style="padding-right: 5px">
+                                                <p class="text-muted miring">
+                                                    <i class="fa fa-calendar text-primary"></i> Terdaftar Sejak 27 Februari 2023
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card mb-2 fade-in">
+                                        <div class="card-body py-2">
+                                            <div class="card-title mb-2">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex">
+                                                        <i class="fa fa-user text-primary icon-customer"></i>
+                                                        <div>
+                                                            <a href="customer-detail.html" class="fs16 text-primary bold" target="_blank">John Doe</a>
+                                                            <br>
+                                                            <div class="text-muted mt-2">6232323232232</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="favorit"  data-mdb-toggle="tooltip" title="Jadikan Favorit">
+                                                        <i class="fa fa-thumbs-up fs16" data-value="1"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-text mb-2" style="padding-right: 5px">
+                                                <p class="text-muted miring">
+                                                    <i class="fa fa-calendar text-primary"></i> Terdaftar Sejak 27 Februari 2023
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="col-md-12 text-center mt-4">
+                                        <button type="button" class="btn btn-primary text-white fs12">
+                                            <i class="fa fa-plus"></i> Tambah Customer
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <nav class="navbar-wrap">
+            <div class="menubar-footer">
+                <a href="index2.html">
+                    <button class="btn-menubar">
+                        <i class="fa fa-home text-dark menu-icon"></i>
+                        <span class="text-dark menu-title">Home</span>
+                    </button>
+                </a>
+                <a href="order-proses.html">
+                    <button class="btn-menubar">
+                        <i class="fa fa-shopping-cart text-dark menu-icon"></i>
+                        <span class="text-dark menu-title">Order</span>
+                    </button>
+                </a>
+                <a href="customer.html">
+                    <button class="btn-menubar">
+                        <i class="fa fa-users text-dark menu-icon active-menu"></i>
+                        <span class="text-dark menu-title active-menu">Customer</span>
+                    </button>
+                </a>
+                <a href="account.html">
+                    <button class="btn-menubar">
+                        <i class="fa fa-user text-dark menu-icon"></i>
+                        <span class="text-dark menu-title">Account</span>
+                    </button>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</body>
+
+</html>

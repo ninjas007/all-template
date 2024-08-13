@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PRODUK</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Start MDBootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- End MDBootstrap -->
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .label-form {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 3px
+        }
+
+        .navbar-wrap {
+            border-style: none !important;
+        }
+
+        .table>:not(caption)>*>* {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+            border-bottom: none;
+            /* border-top: .5px solid #cbcbcb !important; */
+        }
+
+        table tr.cart-item img {
+            width: 75px;
+            border-radius: 10px;
+        }
+
+        table tr.cart-item input.qty-form {
+            padding: 4px 7px;
+            outline: none;
+            width: 100%;
+            border: none;
+            border-top: .5px solid #cbcbcb;
+            border-bottom: .5px solid #cbcbcb;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .qty-minus {
+            border-top-left-radius: 5px !important;
+            border-bottom-left-radius: 5px !important;
+            border-left: .5px solid #cbcbcb !important;
+        }
+
+        .qty-plus {
+            border-top-right-radius: 5px !important;
+            border-bottom-right-radius: 5px !important;
+            border-right: .5px solid #cbcbcb !important;
+            border-left: none;
+        }
+
+        .qty-minus,
+        .qty-plus {
+            border-top: .5px solid #cbcbcb !important;
+            border-bottom: .5px solid #cbcbcb !important;
+        }
+
+        .qty-minus:hover,
+        .qty-plus:hover {
+            cursor: pointer;
+        }
+
+        .cart-qty {
+            position: absolute;
+            top: 4px;
+            right: 10px;
+            padding: 3px 4px;
+            border-radius: 20%;
+            font-size: 9px
+        }
+
+        .body-header {
+            position: fixed;
+        }
+
+        .body-wrap {
+            height: auto;
+            padding-bottom: 80px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <section class="body-header p-4 py-3">
+                    <a href="index.html" class="text-white fs18 bold" style="position: absolute;">
+                        <i class="fa fa-arrow-left fs18 bold"></i>
+                    </a>
+                    <div class="text-white bold text-center">
+                        <div class="fs18 float-end">
+                            <a class="text-white" href="cart.html">
+                                <i class="fa-solid fa-cart-shopping" style="font-size: 18px;" aria-hidden="true"></i>
+                                <div class="bg-dark cart-qty">3</div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col-md-12 p-4 mt-5">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="card-img-top mb-3"
+                                alt="ETAWAKU PLATINUM" style="width: 100%; height: 500px;" />
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <div class="text-primary fs20">Rp. 120,000</div>
+                                            <div class="text-muted fs20">ETAWAKU PLATINUM</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-muted">121 Terjual</div>
+                                        </div>
+                                    </div>
+                                </h5>
+                                <hr>
+                            </div>
+                            <div class="card-body">
+                                <div class="h3 text-muted">Deskripsi Produk</div>
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, repellendus.
+                                    Nihil, possimus et! Error saepe culpa laudantium praesentium molestias suscipit ab
+                                    officiis eos. Et at quo aspernatur consequatur, error provident quas dolore minus
+                                    asperiores impedit sed adipisci quis? Obcaecati ipsa, consectetur repellendus minus
+                                    quidem debitis labore quasi unde! Inventore tempore eos ea aliquam, a hic dolores
+                                    itaque placeat repellat dolor laudantium commodi doloremque, culpa enim, laboriosam
+                                    veniam ullam? Dolore totam quod nobis, modi porro rerum voluptatem et consequatur
+                                    aperiam assumenda similique deleniti est fuga magni atque eligendi possimus? Itaque,
+                                    similique iusto! Commodi ad aspernatur laborum accusamus tenetur ipsam ex quasi
+                                    possimus magnam blanditiis hic qui beatae ut corrupti, natus fuga quos nihil in
+                                    temporibus soluta cum eum quam maiores voluptatibus. Omnis culpa laudantium, nulla
+                                    accusamus assumenda illo eius, vero temporibus, magnam fugiat ipsa? Quisquam eaque
+                                    omnis est sapiente, debitis dolor fugit aspernatur asperiores dolores quo. At vitae
+                                    nesciunt natus voluptates reiciendis illum, corrupti, qui quia recusandae neque
+                                    cupiditate, incidunt nobis ex exercitationem eum placeat quidem quae tempora esse
+                                    debitis! Illum ut quae officiis suscipit unde inventore veritatis vero corrupti
+                                    consectetur quos cum asperiores ipsa incidunt iusto nemo similique temporibus quia
+                                    non, commodi alias repellendus quo fugiat tenetur quisquam? Quasi, ducimus
+                                    explicabo. Quae aspernatur debitis excepturi natus labore. Quod deleniti voluptate
+                                    omnis mollitia unde ad sapiente nihil debitis voluptates, vero architecto aliquid,
+                                    maxime quas ipsum et reiciendis error eaque fuga blanditiis laborum praesentium
+                                    vitae eligendi! Debitis, laborum expedita. Modi delectus earum accusamus id
+                                    obcaecati, sapiente voluptatibus aliquam sit quaerat placeat illo dicta amet
+                                    doloremque laborum minus error. Quod ipsum, excepturi voluptas necessitatibus dicta
+                                    molestiae odio qui voluptate aut, illo doloremque ratione asperiores recusandae
+                                    deserunt. Atque nihil sequi fugiat ea obcaecati quis maxime fuga aperiam earum error
+                                    veniam quos consequuntur natus ipsum quibusdam impedit nesciunt officia saepe
+                                    veritatis a, magnam molestiae, dolor harum. Eos, laboriosam reprehenderit? Eius
+                                    quaerat, earum accusamus quae alias officia, ab quod commodi eum magni corrupti.
+                                    Perspiciatis reiciendis vel debitis id provident voluptas optio eaque minima
+                                    accusamus, animi sit error tempora, dignissimos mollitia omnis esse temporibus.
+                                    Repudiandae error enim dicta sed ipsa illum, explicabo fugiat iure totam. Qui,
+                                    reprehenderit sed iusto nisi pariatur corporis doloremque officia, iste libero neque
+                                    quaerat, dolore omnis illum aspernatur facere odit natus nemo. Sapiente architecto
+                                    doloribus similique laborum cum voluptatem maxime nulla ipsum culpa sed, fugiat
+                                    commodi praesentium, voluptatibus deleniti eveniet dicta dolorum! Ipsam nisi cum ad
+                                    ipsa quae voluptates eaque quos possimus vel itaque ea voluptate velit, dicta
+                                    excepturi enim vitae facilis perspiciatis adipisci natus quas magni magnam modi
+                                    rerum corporis? Ea ipsum atque natus in cumque repellendus officiis possimus
+                                    tempore! Facere qui explicabo corporis nisi quo officia ducimus repellat
+                                    voluptatibus distinctio quibusdam doloribus fuga quae a nam animi labore incidunt
+                                    voluptas ab eaque reprehenderit autem adipisci, quas fugiat atque! Eaque, architecto
+                                    cum! Harum aliquam adipisci ipsam doloremque, velit error deleniti perspiciatis
+                                    debitis itaque recusandae nam, quasi dolorem quibusdam cumque sit suscipit
+                                    repellendus! Exercitationem sed molestias optio aspernatur est doloribus, voluptates
+                                    debitis esse consequuntur iusto rem fugit accusantium et qui animi ipsam dolore,
+                                    perferendis ex quos, maxime molestiae natus culpa earum ullam. Dolore assumenda
+                                    tempora facere exercitationem suscipit numquam, molestias corporis commodi ratione
+                                    optio laudantium! Voluptate facilis suscipit impedit deleniti libero, praesentium
+                                    ipsa architecto error sit eos sapiente minima velit et laborum! Voluptates culpa ut
+                                    inventore dolores mollitia nisi quos eaque consequatur et! Numquam hic itaque
+                                    dolorem quod recusandae doloremque officia quos doloribus? Quisquam omnis sint
+                                    repudiandae architecto. Repellendus error saepe recusandae? Voluptate quod nemo
+                                    corrupti autem. Doloribus minus officia quo dignissimos praesentium, fuga
+                                    <br>
+                                    <br>
+                                    laudantium. Ab animi repellat magnam enim. Est voluptates eaque dicta quos. Nobis
+                                    voluptates doloribus vitae dolore deserunt nesciunt necessitatibus corrupti ipsa ea
+                                    quae asperiores ipsam architecto blanditiis voluptatem distinctio, porro illo! Fuga
+                                    placeat totam et reprehenderit! Unde incidunt earum vitae reiciendis laudantium
+                                    reprehenderit repudiandae illum ea quia natus! Totam, modi eligendi reprehenderit
+                                    aut optio rerum rem animi inventore eum quod error, dolorem atque, quaerat libero
+                                    pariatur esse possimus doloremque labore alias! Consequuntur totam quam veniam iusto
+                                    aut pariatur ut error. Iure error reiciendis quo? Asperiores, vel nihil voluptatum
+                                    velit sunt dicta error facilis dolor laudantium repellat incidunt rem ut expedita
+                                    eos repudiandae quo? Inventore provident non, quam mollitia at eveniet ducimus
+                                    consequatur quibusdam ad voluptate eum facilis eos rerum assumenda voluptas rem est
+                                    molestias voluptatum recusandae doloremque veniam ullam. Id tenetur ab consectetur
+                                    magnam recusandae est, sit molestiae eius. Perferendis, ut soluta amet esse error
+                                    doloremque molestias incidunt ratione beatae qui perspiciatis quia facilis numquam
+                                    vel voluptatum inventore? Atque, dolore blanditiis illo dolorem at tempore amet
+                                    molestiae magnam? Porro mollitia doloribus est? Eligendi animi facilis aperiam
+                                    necessitatibus unde. A laboriosam, ratione eum enim modi ipsa amet vitae nam autem
+                                    nisi magnam ipsum, quia porro. Laudantium facilis nesciunt assumenda quo eveniet.
+                                    Eligendi, ipsam iste. Similique pariatur ducimus nulla excepturi ratione ipsam,
+                                    cumque accusantium laudantium repellendus ipsum exercitationem neque a maiores ipsa
+                                    modi non consectetur quia. Quo doloribus facere eos sit delectus obcaecati
+                                    repudiandae accusamus, nulla iste repellendus libero, dolore recusandae dolorum, vel
+                                    eveniet? Distinctio quibusdam voluptas dolorum nam vero quae fuga laboriosam! A
+                                    velit debitis dolorem, est quibusdam enim vitae corporis eum aspernatur ad totam
+                                    voluptatibus quas nesciunt amet voluptas, rem doloremque quia et. Aspernatur officia
+                                    repudiandae sunt ad accusantium in ullam debitis quae autem doloribus ipsa numquam,
+                                    minima mollitia odio laborum incidunt molestias saepe dignissimos ea nobis quaerat
+                                    nihil dicta. Deleniti quidem optio quaerat reiciendis expedita? Accusantium minima
+                                    alias recusandae et vel modi odio, dignissimos perferendis veritatis architecto
+                                    possimus ipsam velit repudiandae quos odit maiores eveniet eos aperiam, numquam ad
+                                    ipsa? Quibusdam eveniet vel ut ipsum magnam possimus, officiis alias dolore sunt?
+                                    Itaque fuga saepe aliquam voluptatibus, facere dolorem velit omnis, delectus, maxime
+                                    libero repellat. Aut dignissimos doloribus, placeat id animi omnis hic fugit. Quo
+                                    numquam molestiae iusto soluta voluptatem impedit itaque a minus, non, sit dolorum
+                                    obcaecati illum deleniti, pariatur reprehenderit voluptate nihil voluptates
+                                    perferendis officia cumque molestias! Illum quas quaerat, iure sed non distinctio
+                                    deserunt hic dolores quo voluptatum nulla officia, reiciendis voluptates accusamus
+                                    porro facilis repudiandae animi aspernatur, libero quos? Illo laudantium voluptates
+                                    at omnis eius.
+                                    <br>
+                                    <br>
+                                    repudiandae sunt ad accusantium in ullam debitis quae autem doloribus ipsa numquam,
+                                    minima mollitia odio laborum incidunt molestias saepe dignissimos ea nobis quaerat
+                                    nihil dicta. Deleniti quidem optio quaerat reiciendis expedita? Accusantium minima
+                                    alias recusandae et vel modi odio, dignissimos perferendis veritatis architecto
+                                    possimus ipsam velit repudiandae quos odit maiores eveniet eos aperiam, numquam ad
+                                    ipsa? Quibusdam eveniet vel ut ipsum magnam possimus, officiis alias dolore sunt?
+                                    Itaque fuga saepe aliquam voluptatibus, facere dolorem velit omnis, delectus, maxime
+                                    libero repellat. Aut dignissimos doloribus, placeat id animi omnis hic fugit. Quo
+                                    numquam molestiae iusto soluta voluptatem impedit itaque a minus, non, sit dolorum
+                                    obcaecati illum deleniti, pariatur reprehenderit voluptate nihil voluptates
+                                    perferendis officia cumque molestias! Illum quas quaerat, iure sed non distinctio
+                                    deserunt hic dolores quo voluptatum nulla officia, reiciendis voluptates accusamus
+                                    porro facilis repudiandae animi aspernatur, libero quos? Illo laudantium voluptates
+                                    at omnis eius.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <nav class="navbar-wrap">
+            <div class="menubar-footer">
+                <div class="row py-4" style="width: 100%;">
+                    <div class="col-6">
+                        <a href="cart.html" class="btn btn-lg btn-white text-primary form-control"
+                            style="border: 1px solid #3A71CA">
+                            <i class="fa fa-plus"></i> Beli Langsung
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a class="btn btn-lg btn-primary text-white form-control" data-mdb-toggle="modal"
+                            data-mdb-target="#productModal" style="border: 1px solid #3A71CA;">
+                            <i class="fa fa-cart-plus"></i> Atur Qty
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Detail Quantity</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table mb-0">
+                        <tr class="cart-item">
+                            <td width="80%">
+                                <div class="h5 text-primary">ETAWAKU PLATINUM</div>
+                                <div class="d-flex justify-content-start">
+                                    <div style="padding-right: 5px">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"">
+                                    </div>
+                                    <div class=" align-items-end">
+                                        <div class="fs14 mb-2 text-muted">Rp. 120,000</div>
+                                        <div class="fs12 text-primary bold">1 Paket</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td align="right" valign="bottom">
+                                <div class="input-group">
+                                    <span class="input-group-text bold qty-minus" onclick="qtyMinus(this)">
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <input type="text" class="qty-form" style="padding: 5px" value="2" />
+                                    <span class="input-group-text bold qty-plus" onclick="qtyPlus(this)">
+                                        <i class="fa fa-plus"></i>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text-dark d-flex justify-content-end">
+                    <div class="text-muted fs16 px-3 pb-3">Total Rp. 240,000</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        <i class="fa fa-plus"></i>Tambah ke Keranjang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript">
+        function qtyMinus(e) {
+            let qty = $(e).parent().find('.qty-form').val();
+
+            if (qty > 1) {
+                qty = qty - 1;
+                $(e).parent().find('.qty-form').val(qty);
+            }
+        }
+
+        function qtyPlus(e) {
+            let qty = $(e).parent().find('.qty-form').val();
+
+            qty = parseInt(qty) + 1;
+            $(e).parent().find('.qty-form').val(qty);
+        }
+
+        $('.qty-form').keyup(function (e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+            if (this.value == '') this.value = 1;
+        })
+    </script>
+</body>
+
+</html>

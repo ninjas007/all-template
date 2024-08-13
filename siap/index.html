@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Siap Order</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+    <!-- End MDBootstrap -->
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .desc-card {
+            background: rgb(255, 255, 255);
+            font-size: 14px;
+        }
+
+        .list-group-light {
+            --mdb-list-group-light-item-py: 7px !important;
+        }
+
+        .list-group-item {
+            font-size: 14px
+        }
+
+        .li-icon {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .input-data-penerima {
+            font-size: 15px;
+            padding: 8px;
+            margin: 10px 0px;
+            background-color: #fafafa;
+        }
+
+        .btn-beli {
+            margin-top: 15px;
+        }
+
+        .btn-beli:hover,
+        .icon-btn-beli:hover {
+            opacity: 0.8;
+        }
+
+        .btn-beli,
+        .icon-btn-beli {
+            padding: 8px 0px;
+            font-size: 14px;
+        }
+
+        .title-home {
+            color: #000;
+            font-size: 34px;
+            font-weight: bold;
+        }
+
+        .subtitle-home {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .subtitle-home,
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            color: #848484;
+        }
+
+        .btn-beli,
+        .icon-btn-beli,
+        .btn-beli:hover,
+        .icon-btn-beli:hover,
+        .btn-beli:active,
+        .icon-btn-beli:active {
+            background-color: #3cb777 !important;
+            color: #ffffff !important;
+        }
+
+        /* size less than 425px change width */
+        @media (max-width: 424px) {
+            .img-1 {
+                width: 130px !important;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="body-wrap mb-3 p-4">
+            <div class="row mt-5">
+                <div class="col-md-12 text-center">
+                    <div class="mb-3 font-weight-bold title-home">Ebook Microsoft Office Lengkap</div>
+                    <div class="subtitle-home"">Dapatkan Paket Ebook Lengkap Microsoft Office Cocok Buat Anda yang Karyawan, Kuliahan atau Profesional yang Ingin Lebih Mahir Menggunakan Microsoft Office</div>
+                </div>
+            </div>
+            <div class="wrap-card">
+                <div class="row mt-5 card">
+                    <div class="col-md-12 d-flex justify-content-evenly">
+                        <img src="images/jaminan-puas.png" class="img-fluid img-1" alt="Transaksi Aman">
+                        <img src="images/transaksi-aman.png" class="img-fluid img-1" alt="Jaminan Puas">
+                    </div>
+                    <div class="col-md-12 text-center mt-5">
+                        <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+                            <div class="carousel-indicators">
+                              <button
+                                type="button"
+                                data-mdb-target="#carouselExampleCrossfade"
+                                data-mdb-slide-to="0"
+                                class="active"
+                                aria-current="true"
+                                aria-label="Slide 1"
+                              ></button>
+                              <button
+                                type="button"
+                                data-mdb-target="#carouselExampleCrossfade"
+                                data-mdb-slide-to="1"
+                                aria-label="Slide 2"
+                              ></button>
+                              <button
+                                type="button"
+                                data-mdb-target="#carouselExampleCrossfade"
+                                data-mdb-slide-to="2"
+                                aria-label="Slide 3"
+                              ></button>
+                              <button
+                                type="button"
+                                data-mdb-target="#carouselExampleCrossfade"
+                                data-mdb-slide-to="3"
+                                aria-label="Slide 4"
+                              ></button>
+                              <button
+                                type="button"
+                                data-mdb-target="#carouselExampleCrossfade"
+                                data-mdb-slide-to="4"
+                                aria-label="Slide 5"
+                              ></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="images/word.jpeg" class="img-fluid" alt="Microsoft Office Word"/>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/excel.jpeg" class="img-fluid" alt="Microsoft Office Excel"/>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/powerpoint.jpeg" class="img-fluid" alt="Microsoft Office Power Point"/>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/excel2.jpeg" class="img-fluid" alt="Microsoft Office Excel 2"/>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="images/access.jpeg" class="img-fluid" alt="Microsof Office Access"/>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                    </div>
+                    <div class="col-md-12 text-center mt-3">
+                        <div class="desc-card">
+                            HANYA 199RIBU SUDAH DAPAT Paket Ebook Microsoft Office. Berisi Ebook Microsoft Office yaitu Word, Excel, Powerpoint, Rumus dan Macro Excel dan Microsoft Access. Beli sekarang Juga dan dapatkan Bonus Berupa Tutorial Membuat Animasi dengan Powerpoint dan Koleksi Template Powerpoint Sertifikat. Info 0822-9656-9339
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center mt-5">
+                        <div class="desc-card">
+                            SETELAH BAYAR, KAMI KIRIMKAN LINK DOWNLOAD NYA LANGSUNG EBOOKNYA DAN BONUSNYA LEWAT WA DAN EMAIL. <br>
+                        (CATATAN : PRODUK INI BERUPA EBOOK YANG BISA ANDA PELAJARI DI HP ATAUPUN LAPTOP KAPAN PUN)
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center mt-5">
+                        <div class="desc-card">
+                            UNTUK BELI SEKARANG JUGA DENGAN HARGA PROMO 199.000 SILAHKAN ISI FORMULIR DIBAWAH....
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-5">
+                        <div class="h3">Yang Anda Dapatkan:</div>
+                        <ul class="list-group list-group-light">
+                            <li class="list-group-item border-0 d-flex"><i class="fa fa-check text-success li-icon"></i>&nbsp;Ebook Microsoft Word</li>
+                            <li class="list-group-item border-0 d-flex"><i class="fa fa-check text-success li-icon"></i>&nbsp;Ebook Microsoft Excel</li>
+                            <li class="list-group-item border-0 d-flex"><i class="fa fa-check text-success li-icon"></i>&nbsp;Ebook Microsoft Powerpoint</li>
+                            <li class="list-group-item border-0 d-flex"><i class="fa fa-check text-success li-icon"></i>&nbsp;Ebook Microsoft Excel (Rumus dan Macro)</li>
+                            <li class="list-group-item border-0 d-flex"><i class="fa fa-check text-success li-icon"></i>&nbsp;Ebook Microsoft Access</li>
+                            <li class="list-group-item border-0 d-flex"><i class="fa fa-check text-success li-icon"></i>&nbsp;Bonus Video Tutorial Buat Animasi dengan Powerpoint</li>
+                            <li class="list-group-item border-0 d-flex"><i class="fa fa-check text-success li-icon"></i>&nbsp;Bonus Template Powerpoint Sertifikat</li>
+                            <li class="list-group-item border-0 d-flex"><i class="fa fa-check text-success li-icon"></i>&nbsp;Catatan : Semua ebook dan bonus langsung dikirim ke email dan wa anda.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 mt-5">
+                        <div class="h3">Data Penerima:</div>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-data-penerima" placeholder="Nama Anda">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input-data-penerima" placeholder="No. Whatsapp Anda">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control input-data-penerima" placeholder="Email Anda">
+                            </div>
+                            <button type="submit" class="btn btn-lg form-control btn-beli">Beli Sekarang&nbsp;<i class="fa fa-arrow-circle-right icon-btn-beli"></i> </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+</body>
+
+</html>

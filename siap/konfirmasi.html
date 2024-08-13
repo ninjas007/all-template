@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Siap Order</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+    <!-- End MDBootstrap -->
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* override body wrap */
+        .body-wrap {
+            width: 560px;
+        }
+
+        /* overrides card */
+        .card {
+            padding: 3rem;
+        }
+
+        .title-konfirmasi {
+            color: #000;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .btn-kirim {
+            margin-top: 15px;
+        }
+
+        .btn-kirim,
+        .icon-btn-kirim {
+            padding: 6px 0px;
+            font-size: 13px;
+        }
+
+        .btn-kirim:hover,
+        .icon-btn-kirim:hover {
+            opacity: 0.8;
+        }
+
+        .label-konfirmasi {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-konfirmasi, 
+        .js-select2{
+            padding: 4px 6px;
+            font-size: 14px;
+            background-color: #fafafa;
+        }
+
+        .js-select2 {
+            width: 100%;
+        }
+
+        /* size less than 425px change width */
+        @media (max-width: 424px) {
+            .img-1 {
+                width: 130px !important;
+            }
+        }
+        
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="body-wrap mb-3 p-4">
+            <div class="row mt-5">
+                <div class="col-md-12 text-center">
+                    <div class="mb-3 font-weight-bold title-konfirmasi">Konfirmasi Pembayaran</div>
+                </div>
+            </div>
+            <div class="wrap-card">
+                <div class="row mt-5 card">
+                    <div class="col-md-12">
+                        <form action="" method="POST">
+                            <div class="form-group mb-4">
+                                <label for="orderId" class="label-konfirmasi">Order ID <span class="text-danger">*</span></label>
+                                <input type="text" id="orderId" name="order_id"  class="form-control form-konfirmasi" placeholder="No. Pesanan">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="atasNamaRekening" class="label-konfirmasi">Atas Nama Rekening <span class="text-danger">*</span></label>
+                                <input type="text" id="atasNamaRekening" name="pemilik_rekening"  class="form-control form-konfirmasi" placeholder="Pemilik Rekening">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="transferKe" class="label-konfirmasi">Transfer ke <span class="text-danger">*</span></label>
+                                <select name="transfer_ke" id="transferKe" class="form-control form-konfirmasi js-select2">
+                                    <option value="">BCA - Lifius - 7910889847</option>
+                                    <option value="">Mandiri - Lifius - 1620002851677</option>
+                                    <option value="">BSI - Lifius - 7174820408</option>
+                                    <option value="">BRI - Lifius - 022501104748508</option>
+                                    <option value="">BNI - Lifius - 1584626467</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="tglTransfer" class="label-konfirmasi">Tanggal Transfer <span class="text-danger">*</span></label>
+                                <input type="date" id="tglTransfer" name="tgl_transfer"  class="form-control form-konfirmasi" placeholder="Tanggal Transfer">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="jmlTransfer" class="label-konfirmasi">Jumlah Transfer <span class="text-danger">*</span></label>
+                                <input type="text" id="jmlTransfer" name="jml_transfer"  class="form-control form-konfirmasi" placeholder="Contoh: 10000">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="buktiTrasnfer" class="label-konfirmasi">Bukti Transfer</label>
+                                <input type="file" id="buktiTrasnfer" name="bukti_transfer"  class="form-control form-konfirmasi"">
+                            </div>
+                            <div class="form-group mt-4">
+                                <button type="submit" class="btn btn-primary form-control btn-kirim">
+                                   <i class="fa fa-paper-plane icon-btn-kirim"></i> KIRIM
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.js-select2').select2({
+                width: 'resolve'
+            });
+        });
+    </script>
+</body>
+
+</html>
