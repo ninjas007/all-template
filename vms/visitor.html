@@ -119,6 +119,13 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group mb-3">
+                                                    <label class="form-label" for="identitas-0">Email</label>
+                                                    <input type="text" id="identitas-0" name="identitas[]"
+                                                        class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group mb-3">
                                                     <label class="form-label" for="nomorPlat-0">Nomor Plat</label>
                                                     <input type="text" id="nomorPlat-0" name="nomorPlat[]"
                                                         class="form-control" />
@@ -134,7 +141,7 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" id="submit" class="btn btn-info btn-block">
+                                <button type="button" id="submit" class="btn btn-info btn-block">
                                    <i class="fa fa-paper-plane"></i> Submit
                                 </button>
                             </form>
@@ -179,6 +186,11 @@
     <script src="js/person.js"></script>
     <script src="js/fade.js"></script>
 
+    <script>
+        $('#submit').click(function(){
+            
+        })
+    </script>
 </body>
 
 </html>

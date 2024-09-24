@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Education</title>
+
+    <link href="css/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/kemenkes.css">
+
+    <link rel="stylesheet" href="css/menubar.css">
+    <style>
+        table tr td {
+            padding: 5px 3px;
+        }
+
+        #riwayatUmurKandungan tr td,
+        #riwayatTekananDarah tr td,
+        #riwayatDenyutJantungJanin tr td {
+            border: .3px solid #a1a1a1;
+            padding: 3px;
+        }
+
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link {
+            color: #000 !important;
+            
+
+        }
+
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+            background-color: #b7c913;
+            border: 1px solid #7f7f80;
+            border-radius: 5px;
+            color: #fff !important;
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <div class="body-header">
+                    <div class="body-header-content text-dark p-3 py-2">
+                        <img src="images/left-arrow.png" onclick="window.location.href = 'menu.html';">&nbsp;&nbsp; Menu
+                    </div>
+                </div>
+                <div class="body-content p-4" style="margin-top: 60px">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <ul class="nav nav-tabs justify-content-center d-flex">
+                                <li class="nav-item" style="background-color: transparent;">
+                                    <a class="nav-link" href="screening-hasil.html">Riwayat Screening</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="monitoring-hasil.html">Riwayat Monitoring</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <table class="mb-3">
+                                <thead>
+                                    <tr>
+                                        <th class="fs12 fw-bold" colspan="4">Umur Kandungan</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="riwayatUmurKandungan">
+                                    <tr>
+                                        <td colspan="4">Belum ada riwayat Umur Kandungan</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="mb-3">
+                                <thead>
+                                    <tr>
+                                        <th class="fs12 fw-bold" colspan="4">Tekanan Darah</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="riwayatTekananDarah">
+                                    <tr>
+                                        <td colspan="4">Belum ada riwayat Tekanan Darah</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="mb-3">
+                                <thead>
+                                    <tr>
+                                        <th class="fs12 fw-bold" colspan="3">Denyut Jantung Janin</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="riwayatDenyutJantungJanin">
+                                    <tr>
+                                        <td colspan="3">Belum ada riwayat Denyut Jantung Janin</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" style="padding: 10px 0px">
+                                            <a href="monitoring.html" class="btn btn-info text-white">Tambah
+                                                Monitoring</a>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/mdb.min.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/fade.js"></script>
+    <script>
+        $(document).ready(function () {
+            let dataDiri = JSON.parse(localStorage.getItem('dataDiri'));
+            if (dataDiri) {
+                $('#namaIstri').html(dataDiri[0].namaIstri);
+                $('#namaSuami').html(dataDiri[0].namaSuami);
+            } else {
+                window.location.href = 'biodata.html';
+            }
+
+            let dataUmurKandungan = JSON.parse(localStorage.getItem('dataUmurKandungan') || '[]');
+            let dataTekananDarah = JSON.parse(localStorage.getItem('dataTekananDarah') || '[]');
+            let dataDenyutJantungJanin = JSON.parse(localStorage.getItem('dataDenyutJantungJanin') || '[]');
+
+            getDataUmurKandungan(dataUmurKandungan);
+            getDataTekananDarah(dataTekananDarah);
+            getDataDenyutJantungJanin(dataDenyutJantungJanin);
+        })
+
+        function getDataUmurKandungan(dataUmurKandungan) {
+            if (dataUmurKandungan && dataUmurKandungan.length > 0) {
+                let tr = ``;
+                $.each(dataUmurKandungan, function (i, item) {
+                    tr += `<tr style="background-color: #f8f9fa; margin-bottom: 10px;">
+                        <td class="text-center align-middle" style="width: 5%; ">${i + 1}</td>
+                        <td width="35%">
+                            ${item.date} 
+                        </td>
+                        <td>
+                            ${item.hasilUmurKandungan}
+                        </td>
+                        <td class="text-center align-middle" style="width: 10%;">
+                            <button class="btn btn-danger btn-sm" onclick="deleteUmurKandungan(${i})">
+                                <span class="fs12">&times</span>
+                            </button>
+                        </td>
+                    </tr>`;
+                });
+
+                $('tbody#riwayatUmurKandungan').html(tr);
+            }
+        }
+        function getDataTekananDarah(dataTekananDarah) {
+            if (dataTekananDarah && dataTekananDarah.length > 0) {
+                let tr = ``;
+                $.each(dataTekananDarah, function (i, item) {
+                    tr += `<tr style="background-color: #f8f9fa; margin-bottom: 10px;">
+                        <td class="text-center align-middle" style="width: 5%; ">${i + 1}</td>
+                        <td width="35%">
+                            ${item.date} 
+                        </td>
+                        <td>
+                            ${item.hasilTekananDarah}
+                        </td>
+                        <td class="text-center align-middle" style="width: 10%;">
+                            <button class="btn btn-danger btn-sm" onclick="deleteTekananDarah(${i})">
+                                <span class="fs12">&times</span>
+                            </button>
+                        </td>
+                    </tr>`;
+                });
+
+                $('tbody#riwayatTekananDarah').html(tr);
+            }
+        }
+
+        function getDataDenyutJantungJanin(dataDenyutJantungJanin) {
+            if (dataDenyutJantungJanin && dataDenyutJantungJanin.length > 0) {
+                let tr = ``;
+                $.each(dataDenyutJantungJanin, function (i, item) {
+                    tr += `<tr style="background-color: #f8f9fa; margin-bottom: 10px;">
+                        <td class="text-center align-middle" style="width: 5%; ">${i + 1}</td>
+                        <td width="35%">
+                            ${item.date} 
+                        </td>
+                        <td>
+                            ${item.hasilDenyutJantungJanin}
+                        </td>
+                        <td class="text-center align-middle" style="width: 10%;">
+                            <button class="btn btn-danger btn-sm" onclick="deleteDenyutJantungJanin(${i})">
+                                <span class="fs12">&times</span>
+                            </button>
+                        </td>
+                    </tr>`;
+                });
+
+                $('tbody#riwayatDenyutJantungJanin').html(tr);
+            }
+        }
+
+
+        function deleteUmurKandungan(id) {
+            let confirmDelete = confirm('Apakah anda yakin ingin menghapus data umur kandungan ini?');
+            if (confirmDelete) {
+                let dataUmurKandungan = JSON.parse(localStorage.getItem('dataUmurKandungan'));
+                dataUmurKandungan.splice(id, 1);
+                localStorage.setItem('dataUmurKandungan', JSON.stringify(dataUmurKandungan));
+                window.location.href = 'monitoring-hasil.html';
+            }
+        }
+
+        function deleteTekananDarah(id) {
+            let confirmDelete = confirm('Apakah anda yakin ingin menghapus data tekanan darah ini?');
+            if (confirmDelete) {
+                let dataTekananDarah = JSON.parse(localStorage.getItem('dataTekananDarah'));
+                dataTekananDarah.splice(id, 1);
+                localStorage.setItem('dataTekananDarah', JSON.stringify(dataTekananDarah));
+                window.location.href = 'monitoring-hasil.html';
+            }
+        }
+
+        function deleteDenyutJantungJanin(id) {
+            let confirmDelete = confirm('Apakah anda yakin ingin menghapus data denyut jantung janin ini?');
+            if (confirmDelete) {
+                let dataDenyutJantungJanin = JSON.parse(localStorage.getItem('dataDenyutJantungJanin'));
+                dataDenyutJantungJanin.splice(id, 1);
+                localStorage.setItem('dataDenyutJantungJanin', JSON.stringify(dataDenyutJantungJanin));
+                window.location.href = 'monitoring-hasil.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

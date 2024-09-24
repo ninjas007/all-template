@@ -1,0 +1,7 @@
+.body-wrap {
+    background-image: url('../images/kemenkes-opacity.png'); 
+    background-size: calc(30%); 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;
+}

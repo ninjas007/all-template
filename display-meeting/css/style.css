@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Comic Sans MS';
+    src: url('../assets/fonts/comic-sans/COMIC.TTF');
+}
+
+body {
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    background-image: url("../images/bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.card-available {
+    background: rgb(4, 2, 2);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 52%, rgba(12, 139, 101, 1) 86%);
+}
+
+.border-card {
+    border: .1px solid #464646;
+}
+
+.bg-card-dark {
+    background-color: #231e1e;
+    opacity: 0.85;
+}
+
+.ongoing-text {
+    color: rgb(213, 63, 63);
+}
+
+.later-text-icon {
+    color: rgb(73, 0, 198);
+}
+
+.user-icon {
+    width: 15px;
+    object-fit: contain;
+}
+
+.walking-icon {
+    width: 16px;
+    object-fit: contain;
+}
+
+.user-text {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.walking-text {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.available-count {
+    font-size: 20px;
+    color: rgb(86, 255, 207);
+    font-family: 'Comic Sans MS';
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+}
+
+table#tableMain {
+    border-collapse: separate;
+    border-spacing: 0.5rem 0;
+}
+
+table#tableList {
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.p05 {
+    padding: 0.5px
+}
+
+.later-text,
+.text-pic {
+    color: #d1d1d1;
+}
+
+.text-pic,
+.later-text,
+.ongoing-text {
+    font-size: 13px;
+}
+
+.border-radius-left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.border-radius-right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.chair-img {
+    width: 14px;
+    object-fit: contain;
+}
+
+.text-information {
+    font-size: 10px;
+    padding: 0.1px;
+    color: #fff;
+}

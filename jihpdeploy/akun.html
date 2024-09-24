@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Akun</title>
+
+    <link href="css/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/kemenkes.css">
+
+    <link rel="stylesheet" href="css/menubar.css">
+
+    <style>
+        table tr td {
+            padding: 5px 0px;
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <div class="body-header">
+                    <div class="body-header-content text-dark p-3 py-2">
+                        <img src="images/left-arrow.png" onclick="window.location.href = 'menu.html';">&nbsp;&nbsp; Menu
+                    </div>
+                </div>
+                <div class="body-content p-4" style="margin-top: 100px">
+                    <h2>Biodata Diri</h2>
+                    <hr class="mb-4">
+                    <div class="mb-5">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td class="fs20" width=30%">Nama Suami</td>
+                                <td class="fs20">:</td>
+                                <td class="fs20" id="namaSuami"></td>
+                            </tr>
+                            <tr>
+                                <td class="fs20">Nama Istri</td>
+                                <td class="fs20">:</td>
+                                <td class="fs20" id="namaIstri"></td>
+                            </tr>
+                            <tr>
+                                <td class="fs20">Pendamping</td>
+                                <td class="fs20">:</td>
+                                <td class="fs20" id="namaPendamping"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="text-center">
+                        <button id="reset" class="btn btn-danger btn-lg">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar-wrap">
+            <!-- load menu -->
+        </nav>
+    </div>
+
+    <script src="js/mdb.min.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/fade.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        $(document).ready(function () {
+            let dataDiri = localStorage.getItem('dataDiri');
+
+            if (dataDiri) {
+                let data = JSON.parse(dataDiri);
+                $('#namaSuami').html(data[0].namaSuami);
+                $('#namaIstri').html(data[0].namaIstri);
+                $('#namaPendamping').html(data[0].namaPendamping);
+            } else {
+                window.location.href = 'biodata.html';
+            }
+
+            $('#reset').click(function () {
+
+                localStorage.removeItem('dataDiri');
+                localStorage.removeItem('screening');
+                localStorage.removeItem('dataUmurKandungan');
+                localStorage.removeItem('dataDenyutJantungJanin');
+                localStorage.removeItem('dataTekananDarah');
+
+                window.location.href = 'index.html';
+            })
+        })
+    </script>
+</body>
+
+</html>

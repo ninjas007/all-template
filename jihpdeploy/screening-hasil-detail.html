@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Education</title>
+
+    <link href="css/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/kemenkes.css">
+
+    <link rel="stylesheet" href="css/menubar.css">
+    <style>
+        .body-wrap {
+            height: 100vh;
+        }
+
+        table tr td {
+            padding: 5px 3px;
+        }
+
+        #riwayatScreening tr td {
+            border: .3px solid #a1a1a1;
+            padding: 4px;
+            font-size: 14px;
+        }
+
+        #riwayatScreening tr td:first-child {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <div class="body-header">
+                    <div class="body-header-content text-dark p-3 py-2">
+                        <img src="images/left-arrow.png" onclick="window.location.href = 'menu.html';">&nbsp;&nbsp; Menu
+                    </div>
+                </div>
+                <div class="body-content p-4" style="margin-top: 60px;">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <table class="mb-4">
+                                <tr>
+                                    <td class="fs14 text-center fw-bold" colspan="3">Hasil Screening Kehamilan Berisiko
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="fs14" width="15%">Ibu</td>
+                                    <td width="1%">:</td>
+                                    <td><span id="namaIstri" class="fs14"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fs14" width="15%">Suami</td>
+                                    <td width="1%">:</td>
+                                    <td><span id="namaSuami" class="fs14"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fs14">Tanggal</td>
+                                    <td>:</td>
+                                    <td><span id="date" class="fs14"></span></td>
+                                </tr>
+                            </table>
+                            <table id="riwayatScreening">
+                                <tr class="fw-bold">
+                                    <td width="5%">No</td>
+                                    <td>Screening</td>
+                                    <td>Hasil</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Umur <span id="no1"></span> Thn</td>
+                                    <td id="hasil1"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Kehamilan Ke <span id="no2"></span></td>
+                                    <td id="hasil2"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Umur Anak Terakhir <span id="no3"></span> Thn</td>
+                                    <td id="hasil3"></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Tinggi Badan <span id="no4"></span> Cm</td>
+                                    <td id="hasil4"></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>LILA <span id="no5"></span> Cm</td>
+                                    <td id="hasil5"></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Haemoglobin (HB) <span id="no6"></span>%</td>
+                                    <td id="hasil6"></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Riwayat Pendarahan</td>
+                                    <td id="no7"></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Riwayat Keguguran</td>
+                                    <td id="no8"></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Penyakit Hipertensi</td>
+                                    <td id="no9"></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Penyakit Jantung</td>
+                                    <td id="no10"></td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Penyakit DM</td>
+                                    <td id="no11"></td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Penyakit Asma</td>
+                                    <td id="no12"></td>
+                                </tr>
+                            </table>
+                            <a href="screening-hasil.html" class="btn mt-2 btn-info text-white">Lihat Riwayat Lainnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-wrap">
+            <!-- load menu -->
+        </nav>
+    </div>
+
+    <script src="js/mdb.min.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/fade.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        $(document).ready(function () {
+            let screenings = JSON.parse(localStorage.getItem('screening'));
+
+            // ger params ?id
+            let params = new URLSearchParams(window.location.search);
+            let id = params.get('id');
+
+            let dataDiri = JSON.parse(localStorage.getItem('dataDiri'));
+            if (dataDiri) {
+                $('#namaIstri').html(dataDiri[0].namaIstri);
+                $('#namaSuami').html(dataDiri[0].namaSuami);
+            } else {
+                window.location.href = 'biodata.html';
+            }
+
+            if (screenings) {
+                data = screenings[id];
+
+                let no3 = data.no3 || '__';
+                if (data.belumadaanak == 0) {
+                    no3 = '...'
+                }
+
+                $('#date').text(data.date);
+                $('#no1').text(data.no1);
+                $('#no2').text(data.no2);
+                $('#no3').text(no3);
+                $('#no3').text(no3);
+                $('#no4').text(data.no4);
+                $('#no5').text(data.no5);
+                $('#no6').text(data.no6);
+                $('#no7').text(data.no7);
+                $('#no8').text(data.no8);
+                $('#no9').text(data.no9);
+                $('#no10').text(data.no10);
+                $('#no11').text(data.no11);
+                $('#no12').text(data.no12);
+
+                hasil(data);
+            } else {
+                window.location.href = 'menu.html';
+            }
+
+            function hasil(data) {
+                console.log(data)
+                let hasil1 = '';
+                if (parseInt(data.no1) < 20) {
+                    hasil1 = 'Berisiko';
+                } else if (parseInt(data.no1) >= 20 && parseInt(data.no1) <= 35) {
+                    hasil1 = 'Tidak Berisiko';
+                } else if (parseInt(data.no1) > 35) {
+                    hasil1 = 'Berisiko';
+                }
+
+                let hasil2 = '';
+                if (parseInt(data.no2) == 1) {
+                    hasil2 = 'Berisiko';
+                } else if (parseInt(data.no2) >= 2 && parseInt(data.no2) <= 4) {
+                    hasil2 = 'Tidak Berisiko';
+                } else if (parseInt(data.no2) > 4) {
+                    hasil2 = 'Berisiko';
+                }
+
+                let hasil3 = '';
+                if (data.belumAdaAnak == 1) {
+                    hasil3 = 'Belum Punya Anak';
+                } else if (parseInt(data.no3) >= 2) {
+                    hasil3 = 'Tidak Berisiko';
+                } else if (parseInt(data.no3) < 2) {
+                    hasil3 = 'Berisiko';
+                }
+
+                let hasil4 = '';
+                if (parseInt(data.no4) <= 145) {
+                    hasil4 = 'Berisiko';
+                } else if (parseInt(data.no4) > 145) {
+                    hasil4 = 'Tidak Berisiko';
+                }
+
+                let hasil5 = '';
+                if (parseFloat(data.no5) < 23.5) {
+                    hasil5 = 'Berisiko (KEK)';
+                } else if (parseFloat(data.no5) >= 23.5) {
+                    hasil5 = 'Tidak Berisiko';
+                }
+
+                let hasil6 = '';
+                if (parseInt(data.no6) < 11) {
+                    hasil6 = 'Berisiko (Anemia)';
+                } else if (parseInt(data.no6) >= 11) {
+                    hasil6 = 'Tidak Berisiko';
+                }
+
+                $('#hasil1').text(hasil1);
+                $('#hasil2').text(hasil2);
+                $('#hasil3').text(hasil3);
+                $('#hasil4').text(hasil4);
+                $('#hasil5').text(hasil5);
+                $('#hasil6').text(hasil6);
+            }
+        })
+    </script>
+</body>
+
+</html>

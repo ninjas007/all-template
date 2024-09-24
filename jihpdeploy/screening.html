@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Education</title>
+
+    <link href="css/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/kemenkes.css">
+
+    <link rel="stylesheet" href="css/menubar.css">
+    <style>
+        .body-wrap {
+            height: initial;
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <div class="body-header">
+                    <div class="body-header-content text-dark p-3 py-2">
+                        <img src="images/left-arrow.png" onclick="window.location.href = 'menu.html';">&nbsp;&nbsp; Menu
+                    </div>
+                </div>
+                <div class="body-content p-4" style="margin-top: 60px">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="form-group mb-4">
+                                <label for="no1" class="mb-1 fw-bold fs14">1. Berapa umur ibu saat hamil sekarang?</label>
+                                <input type="number" class="form-control fs14" id="no1" min="0" step="0.1">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="no2" class="mb-1 fw-bold fs14">2. Kehamilan ibu sekarang adalah kehamilan yang keberapa?</label>
+                                <input type="number" class="form-control fs14" id="no2" min="0" step="0.1">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="no3" class="mb-1 fw-bold fs14">3. Berapa umur anak terakhir ibu?</label>
+                                <div class="my-2">
+                                    <input type="checkbox" name="belumadanak" id="no3belumanak" style="width: 15px; height: 15px;"> <label class="fs14" for="no3belumanak">Belum Punya Anak</label>
+                                </div>
+                                <input type="number" class="form-control fs14" id="no3" min="0" step="0.1">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="no4" class="mb-1 fw-bold fs14">4. Berapa tinggi badan ibu?</label>
+                                <input type="number" class="form-control fs14" id="no4" min="0" step="0.1">
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="no5" class="mb-1 fw-bold fs14">5. Berapa hasil pengukuran lingkar lengan atas (LILA)?</label>
+                                <input type="number" class="form-control fs14" id="no5" min="0" step="0.1">
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="no6" class="mb-1 fw-bold fs14">6. Berapa hasil cek HB (Haemoglobin) ibu?</label>
+                                <input type="number" class="form-control fs14" id="no6" min="0" step="0.1">
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="no7" class="mb-1 fw-bold fs14">7. Apakah dipersalinan yang lalu pernah mengalami pendarahan banyak saat persalinan?</label>
+                                <select name="no7" id="no7" class="form-control fs14" style="width: 100%;">
+                                    <option value="Tidak Berisiko">Tidak</option>
+                                    <option value="Berisiko">Ya</option>
+                                    <option value="Belum Pernah Melahirkan">Belum Pernah Melahirkan</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="no8" class="mb-1 fw-bold fs14">8. Apakah ibu pernah mengalami keguguran lebih dari 2 kali?</label>
+                                <select name="no8" id="no8" class="form-control fs14" style="width: 100%;">
+                                    <option value="Tidak Berisiko">Tidak</option>
+                                    <option value="Berisiko">Ya</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="no9" class="mb-1 fw-bold fs14">9. Apakah ibu mengelami hipertensi selama kehamilan yang sekarang?</label>
+                                <select name="no9" id="no9" class="form-control fs14" style="width: 100%;">
+                                    <option value="Tidak Berisiko">Tidak</option>
+                                    <option value="Berisiko">Ya</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="no10" class="mb-1 fw-bold fs14">10. Apakah ibu mengalami penyakit jantung?</label>
+                                <select name="no10" id="no10" class="form-control fs14" style="width: 100%;">
+                                    <option value="Tidak Berisiko">Tidak</option>
+                                    <option value="Berisiko">Ya</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="no11" class="mb-1 fw-bold fs14">11. Apakah ibu mengalami penyakit diabetes militus (DM) ?</label>
+                                <select name="no11" id="no11" class="form-control fs14" style="width: 100%;">
+                                    <option value="Tidak Berisiko">Tidak</option>
+                                    <option value="Berisiko">Ya</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="no12" class="mb-1 fw-bold fs14">12. Apakah ibu mengalami penyakit asma bronchiale?</label>
+                                <select name="no12" id="no12" class="form-control fs14" style="width: 100%;">
+                                    <option value="Tidak Berisiko">Tidak</option>
+                                    <option value="Berisiko">Ya</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4 text-center">
+                            <button type="button" id="simpan" class="btn btn-info btn-lg text-white fs14"
+                                style="border-radius: 20px;"> Simpan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/mdb.min.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/fade.js"></script>
+    <script>
+        $(document).ready(function () {
+            var belumAdaAnak = 0;
+            $('#no3belumanak').click(function () {
+                $("#no3").val('');
+                if ($(this).is(':checked')) {
+                    $("#no3").prop('disabled', true);
+                    belumAdaAnak = 1
+                } else {
+                    $("#no3").prop('disabled', false);
+                    belumAdaAnak = 0
+                }
+            })
+
+            $("#simpan").click(function () {
+
+                if ($("#no1").val() == '' || $("#no2").val() == '' || ($("#no3").val() == '' && belumAdaAnak == 0)) {
+                    alert('Lengkapi data terlebih dahulu')
+                    return;
+                }
+
+                if ($('#no4').val() == '' || $('#no5').val() == '' || $('#no6').val() == '') {
+                    alert('Lengkapi data terlebih dahulu')
+                    return;
+                }
+
+                if ($('#no7').val() == '' || $('#no8').val() == '' || $('#no9').val() == '') {
+                    alert('Lengkapi data terlebih dahulu')
+                    return;
+                }
+
+                if ($('#no10').val() == '' || $('#no11').val() == '' || $('#no12').val() == '') {
+                    alert('Lengkapi data terlebih dahulu')
+                    return;
+                }
+
+                let data = {
+                    date: new Date().toLocaleString(),
+                    no1: $("#no1").val(),
+                    no2: $("#no2").val(),
+                    no3: $("#no3").val(),
+                    no4: $("#no4").val(),
+                    no5: $("#no5").val(),
+                    no6: $("#no6").val(),
+                    no7: $("#no7").val(),
+                    no8: $("#no8").val(),
+                    no9: $("#no9").val(),
+                    no10: $("#no10").val(),
+                    no11: $("#no11").val(),
+                    no12: $("#no12").val(),
+                    belumAdaAnak: belumAdaAnak
+                }
+
+                // cek data local storage screening
+                let screening = localStorage.getItem('screening') || null;
+
+                if (screening && screening != null) {
+
+                    // cek kalau 10 datanya maka hapus data yang pertama
+                    if (JSON.parse(screening).length == 5) {
+                        screening = JSON.parse(screening)
+                        screening.shift()
+                    } else {
+                        screening = JSON.parse(screening)
+                    }
+
+                    screening.push(data)
+                } else {
+                    screening = [data];
+                }
+
+                localStorage.setItem('screening', JSON.stringify(screening))
+
+                let lengthScreenings = JSON.parse(localStorage.getItem('screening')).length;
+
+                window.location.href = 'screening-hasil-detail.html?id=' + (lengthScreenings - 1);
+            })
+        })
+    </script>
+</body>
+
+</html>

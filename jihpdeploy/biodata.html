@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Biodata</title>
+
+    <link href="css/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .body-wrap {
+            background-image: url(images/bg-home.jpg);
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .body {
+            background-color: rgba(36, 86, 86, 0.531) !important;
+        }
+
+        .body-content {
+            background-color: transparent !important;
+        }
+
+        .body-content {
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 15px;
+            /* background-image: url('images/bg.avif') !important; */
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <div class="text-center">
+                    <img src="images/logo-kemenkes.png" class="img-fluid px-5 pt-5" style="opacity: 0.5; width: 400px;">
+                </div>
+                <div class="body-content p-2 bg-white d-flex align-items-center">
+                    <div class="row">
+                        <div style="padding: 0px 50px" class="col-12 text-center mb-5">
+                            <div style="font-size: 30px" class="text-white">Biodata Diri</div>
+                        </div>
+                        <div style="padding: 0px 50px" class="col-12 mb-4">
+                            <div class="form-group mb-4">
+                                <label for="namaSuami" class="mb-1 fw-bold fs20 text-white">Nama Suami</label>
+                                <input type="text" class="form-control fs20" id="namaSuami">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="namaIstri" class="mb-1 fw-bold fs20 text-white">Nama Istri</label>
+                                <input type="text" class="form-control fs20" id="namaIstri">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="namaPendamping" class="mb-1 fw-bold fs20 text-white">Nama Pendamping</label>
+                                <input type="text" class="form-control fs20" id="namaPendamping">
+                            </div>
+                        </div>
+                        <div style="padding: 0px 50px" class="col-12 text-center">
+                            <button type="button" id="simpan" class="btn btn-info btn-lg text-white fs20"
+                                style="border-radius: 20px;">
+                                Simpan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/mdb.min.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/fade.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let dataDiri = localStorage.getItem('dataDiri');
+
+            if (dataDiri) {
+                window.location.href = 'menu.html'
+            }
+
+            var data = [];
+            $('#simpan').click(function () {
+                const namaSuami = $('#namaSuami').val();
+                const namaIstri = $('#namaIstri').val();
+                const namaPendamping = $('#namaPendamping').val();
+
+                let isValid = true;
+
+                if (namaSuami == '') {
+                    $('#namaSuami').addClass('is-invalid');
+                    isValid = false;
+                } else {
+                    $('#namaSuami').removeClass('is-invalid');
+                }
+
+                if (namaIstri == '') {
+                    $('#namaIstri').addClass('is-invalid');
+                    isValid = false;
+                } else {
+                    $('#namaIstri').removeClass('is-invalid');
+                }
+
+                if (namaPendamping == '') {
+                    $('#namaPendamping').addClass('is-invalid');
+                    isValid = false;
+                } else {
+                    $('#namaPendamping').removeClass('is-invalid');
+                }
+
+                if (isValid) {
+                    var dataDiri = {
+                        namaSuami: namaSuami,
+                        namaIstri: namaIstri,
+                        namaPendamping: namaPendamping
+                    };
+
+                    data.push(dataDiri);
+
+                    // save to localStorage
+                    localStorage.setItem('dataDiri', JSON.stringify(data));
+                    alert('Data berhasil disimpan');
+
+                    window.location.href = 'menu.html';
+                } else {
+                    alert('Semua kolom harus diisi');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

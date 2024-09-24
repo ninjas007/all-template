@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Monitoring</title>
+
+    <link href="css/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/kemenkes.css">
+
+    <link rel="stylesheet" href="css/menubar.css">
+    <style>
+        .input-group .input-group-text,
+        .input-group>.form-control {
+            height: calc(2.5rem + 2px);
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div id="wrapper">
+        <div class="body-wrap">
+            <div class="body">
+                <div class="body-header">
+                    <div class="body-header-content text-dark p-3 py-2">
+                        <img src="images/left-arrow.png" onclick="window.location.href = 'menu.html';">&nbsp;&nbsp; Menu
+                    </div>
+                </div>
+                <div class="body-content p-4" style="margin-top: 50px">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card" style="background-color: #ffffffda;">
+                                <div class="card-header">
+                                    <h3 class="text-dark text-center">Monitoring</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row mb-4">
+                                        <div class="col-12">
+                                            <div id="umurKandunganCollapse" class="border p-2 rounded">
+                                                <h4 class="mb-3">Umur Kandungan</h4>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group mb-4">
+                                                            <label class="mb-2 fs14" for="hpht">HPHT (Hari Pertama Haid
+                                                                Terakhir)</label>
+                                                            <input type="date" class="fs14 form-control border"
+                                                                id="hpht">
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label class="mb-2 fs14" for="tanggalCekTerakhir">Tanggal
+                                                                Cek Terakhir</label>
+                                                            <input type="date" class="fs14 form-control border"
+                                                                id="tanggalCekTerakhir">
+                                                            <div class="mt-3 fw-bold fs14" id="hasilUmurKandungan"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button class="btn btn-info" style="font-size: 12px;"
+                                                            id="btnHasilUmurKandungan">Cek</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-12">
+                                            <div id="tekananDarahCollapse" class="border p-2 rounded">
+                                                <h4 class="mb-3">Tekanan Darah</h4>
+                                                <div class="row mb-2">
+                                                    <div class="col-8">
+                                                        <div class="d-flex justify-content-center">
+                                                            <div>
+                                                                <input type="number" class="fs14 form-control border"
+                                                                    id="tekananDarah1" min="0">
+                                                            </div>
+                                                            <div class="fw-bold" style="font-size: 30px;">&nbsp;/&nbsp;
+                                                            </div>
+                                                            <div>
+                                                                <input type="number" class="fs14 form-control border"
+                                                                    id="tekananDarah2" min="0">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-4">
+                                                        <button type="button" class="btn btn-info"
+                                                            id="btnHasilTekananDarah"
+                                                            style="font-size: 12px;">Simpan</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 px-3">
+                                                        <div class="mb-3 fs14 fw-bold" id="hasilTekananDarah"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-12">
+                                            <div id="denyutJantungJaninCollapse" class="border p-2 rounded">
+                                                <h4 class="mb-3">Denyut Jantung Janin</h4>
+                                                <div class="row mb-2">
+                                                    <div class="col-8">
+                                                        <div class="input-group mb-3">
+                                                            <input type="number" class="form-control border"
+                                                                id="denyutJantungJanin" />
+                                                            <span class="input-group-text border">x/menit</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <button type="button" class="btn btn-info"
+                                                            id="btnHasilDenyutJantungJanin"
+                                                            style="font-size: 12px;">Simpan</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 px-3">
+                                                        <div class="mb-3 fs14 fw-bold" id="hasilDenyutJantungJanin"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="monitoring-hasil.html" class="btn btn-info btn-block text-white">Lihat Riwayat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/mdb.min.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/fade.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var date = new Date().toLocaleString();
+
+            $('#btnHasilUmurKandungan').click(function () {
+                let hpht = $('#hpht').val();
+                let tanggalCekTerakhir = $('#tanggalCekTerakhir').val();
+
+                if (hpht == '' || tanggalCekTerakhir == '') {
+                    alert('Lengkapi data terlebih dahulu')
+                    return;
+                }
+
+                // get weeks and days range hpht and tanggakCekTerakhir
+                let hphtDate = new Date(hpht);
+                let cekTerakhirDate = new Date(tanggalCekTerakhir);
+                let weeks = Math.abs(hphtDate - cekTerakhirDate) / (1000 * 60 * 60 * 24 * 7);
+                let days = Math.abs(hphtDate - cekTerakhirDate) / (1000 * 60 * 60 * 24);
+
+                let hasilUmurKandungan = `${Math.floor(weeks)} Minggu ${Math.floor(days)} Hari`;
+
+                let dataUmurKandungan = localStorage.getItem('dataUmurKandungan') ||  null;
+
+                if (dataUmurKandungan && dataUmurKandungan != null) {
+
+                    // cek kalau 10 datanya maka hapus data yang pertama
+                    if (JSON.parse(dataUmurKandungan).length == 5) {
+                        dataUmurKandungan = JSON.parse(dataUmurKandungan)
+                        dataUmurKandungan.splice(0, 1);
+                    } else {
+                        dataUmurKandungan = JSON.parse(dataUmurKandungan)
+                    }
+
+                    dataUmurKandungan.push({
+                        date: date,
+                        hpht: hphtDate,
+                        tanggalCekTerakhir: cekTerakhirDate,
+                        hasilUmurKandungan: hasilUmurKandungan
+                    });
+                } else {
+                    dataUmurKandungan = [{
+                        date: date,
+                        hpht: hphtDate,
+                        tanggalCekTerakhir: cekTerakhirDate,
+                        hasilUmurKandungan: hasilUmurKandungan
+                    }];
+                }
+
+                localStorage.setItem('dataUmurKandungan', JSON.stringify(dataUmurKandungan));
+
+                $('#hpht').val('');
+                $('#tanggalCekTerakhir').val('');
+                $('#hasilUmurKandungan').html(hasilUmurKandungan);
+            })
+
+            $("#btnHasilTekananDarah").click(function () {
+                let tekananDarah1 = $("#tekananDarah1").val();
+                if (tekananDarah1 == '') {
+                    alert('Lengkapi data terlebih dahulu')
+                    return;
+                }
+
+
+                let hasilTekananDarah = '';
+                if (parseInt(tekananDarah1) < 140) {
+                    hasilTekananDarah = 'Normal';
+                } else if (parseInt(tekananDarah1) >= 140) {
+                    hasilTekananDarah = 'Hipertensi';
+                }
+
+                let tekananDarah = tekananDarah1 + '/' + $("#tekananDarah2").val();
+                let dataTekananDarah = localStorage.getItem('dataTekananDarah') || null;
+
+                if (dataTekananDarah && dataTekananDarah != null) {
+
+                    // cek kalau 10 datanya maka hapus data yang pertama
+                    if (JSON.parse(dataTekananDarah).length == 5) {
+                        dataTekananDarah = JSON.parse(dataTekananDarah)
+                        dataTekananDarah.shift()
+                    } else {
+                        dataTekananDarah = JSON.parse(dataTekananDarah)
+                    }
+
+                    // save to local storage
+                    dataTekananDarah.push({
+                        date: date,
+                        tekananDarah: tekananDarah,
+                        hasilTekananDarah: hasilTekananDarah
+                    });
+                } else {
+                    dataTekananDarah = [{
+                        date: date,
+                        tekananDarah: tekananDarah,
+                        hasilTekananDarah: hasilTekananDarah
+                    }];
+                }
+                localStorage.setItem('dataTekananDarah', JSON.stringify(dataTekananDarah));
+
+                $("#tekananDarah1").val('');
+                $("#tekananDarah2").val('');
+                $('#hasilTekananDarah').text(`${tekananDarah} ${hasilTekananDarah}`);
+            });
+
+            $("#btnHasilDenyutJantungJanin").click(function () {
+                let denyutJantungJanin = $("#denyutJantungJanin").val();
+                if (denyutJantungJanin == '') {
+                    alert('Lengkapi data terlebih dahulu')
+                    return;
+                }
+
+                let hasilDenyutJantungJanin = 'Gawat Janin';
+                if (parseInt(denyutJantungJanin) > 120 && parseInt(denyutJantungJanin) < 160) {
+                    hasilDenyutJantungJanin = 'Normal'
+                }
+
+                let dataDenyutJantungJanin = localStorage.getItem('dataDenyutJantungJanin') || null;
+                if (dataDenyutJantungJanin && dataDenyutJantungJanin != null) {
+
+                    // cek kalau 10 datanya maka hapus data yang pertama
+                    if (JSON.parse(dataDenyutJantungJanin).length == 5) {
+                        dataDenyutJantungJanin = JSON.parse(dataDenyutJantungJanin)
+                        dataDenyutJantungJanin.shift()
+                    } else {
+                        dataDenyutJantungJanin = JSON.parse(dataDenyutJantungJanin)
+                    }
+
+                    // save to local storage
+                    dataDenyutJantungJanin.push({
+                        date: date,
+                        denyutJantungJanin: denyutJantungJanin,
+                        hasilDenyutJantungJanin: hasilDenyutJantungJanin,
+                    });
+                } else {
+                    dataDenyutJantungJanin = [{
+                        date: date,
+                        denyutJantungJanin: denyutJantungJanin,
+                        hasilDenyutJantungJanin: hasilDenyutJantungJanin
+                    }];
+                }
+
+                localStorage.setItem('dataDenyutJantungJanin', JSON.stringify(dataDenyutJantungJanin));
+
+                $("#denyutJantungJanin").val('');
+                $('#hasilDenyutJantungJanin').text(`${denyutJantungJanin} X/menit. ${hasilDenyutJantungJanin}`);
+            });
+        })
+    </script>
+</body>
+
+</html>

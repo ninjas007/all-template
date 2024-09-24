@@ -1,0 +1,8 @@
+.menubar-footer {
+    background-color: var(--bg-primary);
+}
+
+.menubar-footer img {
+    width: 35px;
+    margin-bottom: 5px
+}

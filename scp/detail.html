@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-image: url('bg.avif') !important;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+
+        table tr td {
+            padding: 5px;
+            font-size: 15px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            opacity: 0.9;
+        }
+
+        .nav-icon {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-sm-12">
+                <nav class="navbar navbar-expand-lg px-4 bg-white" style="opacity: 0.9;">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="BI_Logo.png" alt="" style="width: 20%;">
+                    </a>
+                    <!-- <div style="margin-left: auto; text-align: right;">
+                        <img src="bio.jfif" style="width: 50%;">
+                    </div> -->
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card h-100" id="contentFoto">
+                    <!-- load content foto -->
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card p-3 h-100">
+                    <table style="width: 100%;">
+                        <input type="hidden" id="idCurrent" value="1">
+                        <tr>
+                            <td width="20%">Nama</td>
+                            <td width="3%">:</td>
+                            <td id="nama">Tilis Tiadi</td>
+                        </tr>
+                        <tr>
+                            <td>NIK</td>
+                            <td>:</td>
+                            <td id="nik">7471132098103001</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td id="email">tilistiadi03@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>PIC</td>
+                            <td>:</td>
+                            <td id="pic">John Doe</td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal</td>
+                            <td>:</td>
+                            <td id="date">20 September 2024</td>
+                        </tr>
+                        <tr>
+                            <td>Lokasi</td>
+                            <td>:</td>
+                            <td id="lokasi">Karawang</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card h-100">
+                    <img src="mobil.jpeg" alt="" style="height: 100%; object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-sm-12 mt-3 text-center d-flex justify-content-center">
+                <div class="nav-icon me-4 h5 text-muted" onclick="prev()">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </div>
+                <div class="nav-icon h5 text-muted" onclick="next()">
+                    Next <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3 mb-3">
+                <div class="card h-100 p-3">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td class="h3">Petugas</td>
+                        </tr>
+                        <tr>
+                            <td class="h5"><i class="fa fa-user"></i> Anton Wibowo</td>
+                        </tr>
+                        <tr>
+                            <td class="h5">51234333</td>
+                        </tr>
+                        <tr>
+                            <td class="h5">SCP 5</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-3">
+                <div class="h-100 card p-2">
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="text-title text-center" style="font-size: 1.5em;">List Visitor</div>
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="visitor">
+                        <!-- load content visitor disini -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 mb-3">
+                <div class="card p-3 h-100">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td class="h3 text-center">Tanggal & Waktu</td>
+                        </tr>
+                        <tr>
+                            <td class="h5 text-center">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td class="h3 text-center">
+                                <span id="time" class="text-info"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="h4 text-center">
+                                <i class="fa fa-calendar text-info"></i> <span id="date2" class="text-info"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+        const data = [
+            {
+                id: 1,
+                nama: "Tilis Tiadi",
+                nik: "7471132098103001",
+                email: "tilistiadi03@gmail.com",
+                pic: "John Doe",
+                tanggal: "20 September 2024",
+                lokasi: "Karawang",
+                foto: 'Tilis Tiadi.png'
+            },
+            {
+                id: 2,
+                nama: "Handi Haryanto",
+                nik: "64711308941003",
+                email: "handiharyanto@gmail.com",
+                pic: "John Doe",
+                tanggal: "20 September 2024",
+                lokasi: "Karawang",
+                foto: 'Mas Handi.jpeg'
+            },
+        ]
+
+        function prev() {
+            let idCurrent = $('#idCurrent').val();
+            let indexPrev = parseInt(idCurrent) - 1;
+            let dataPrev = data.find(x => x.id == indexPrev);
+
+            if (dataPrev) {
+                inputData(dataPrev, indexPrev);
+                htmlContentFoto()
+                classActiveVisitor()
+            }
+        }
+
+        function next() {
+            let idCurrent = $('#idCurrent').val();
+            let indexNext = parseInt(idCurrent) + 1;
+            let dataNext = data.find(x => x.id == indexNext);
+
+            if (dataNext) {
+                inputData(dataNext, indexNext);
+                htmlContentFoto()
+                classActiveVisitor()
+            }
+        }
+
+        function inputData(data, index) {
+            $('#idCurrent').val(index);
+            $('#nama').html(data.nama);
+            $('#nik').html(data.nik);
+            $('#email').html(data.email);
+            $('#pic').html(data.pic);
+            $('#date').html(data.tanggal);
+            $('#lokasi').html(data.lokasi);
+        }
+
+        function htmlContentVisitor() {
+            let html = '';
+            let idCurrent = $('#idCurrent').val();
+
+            $.each(data, (index, item) => {
+                html += `<div class="col-md-4 mb-3">
+                                <div class="border visitor visitor-${item.id} p-2 h-100" style="border-radius: 5px">
+                                    <div class="h5 text-center">${item.nama}</div>
+                                    <div class="h6 text-center">${item.nik}</div>
+                                </div>
+                            </div>`;
+            });
+
+            $('#visitor').html(html);
+        }
+
+        function classActiveVisitor() {
+            let idCurrent = $('#idCurrent').val();
+
+            $('.visitor').removeClass('bg-info text-white');
+            $('.visitor-' + idCurrent).addClass('bg-info text-white');
+        }
+
+        function htmlContentFoto() {
+            let idCurrent = $('#idCurrent').val();
+            let dataNow = data.find(x => x.id == idCurrent);
+            let html = `<img id="foto" src="${dataNow.foto}" alt="" style="height: 270px; width: 100%; object-fit: cover;">`;
+
+            $('#contentFoto').html(html)
+        }
+
+        function dateTime() {
+            let time = new Date().toLocaleTimeString()
+            let formatter = new Intl.DateTimeFormat('id', { month: 'long', day: 'numeric', year: 'numeric' });
+            let date = formatter.format(new Date());
+            $('#time').html(time)
+            $('#date2').html(date)
+        }
+
+        // call function
+        dateTime()
+        htmlContentVisitor()
+        classActiveVisitor()
+        htmlContentFoto()
+
+        setInterval(() => {
+            dateTime()
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+$('.navbar-wrap').load('menu-navbar.html')
