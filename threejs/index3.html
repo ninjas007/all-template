@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #012345;
+            overflow: hidden;
+        }
+
+        #canvas {
+            position: absolute;
+        }
+
+        #testing {
+            color: red;
+            font-family: arial;
+            position: absolute;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/"
+      }
+    }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { OrbitControls } from "https://unpkg.com/three@0.112/examples/jsm/controls/OrbitControls.js";
+
+        
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        let clock = new THREE.Clock();
+
+        const normal = new THREE.Vector3();
+        const position = new THREE.Vector3();
+        const lookAt = new THREE.Vector3();
+
+
+        let renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xFFFCFF);
+        document.getElementById("canvas").appendChild(renderer.domElement);
+
+
+        window.addEventListener('resize', function () {
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+
+
+
+
+        let controls = new OrbitControls( camera, renderer.domElement );
+        // let controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+
+        const curve = new THREE.CatmullRomCurve3([
+            new THREE.Vector3(0, 0, 0),
+            new THREE.Vector3(0, 0, 10),
+            new THREE.Vector3(10, 0, 10),
+        ]);
+        const geometry = new THREE.TubeGeometry(curve, 100, 0.5, 8, false);
+        const material = new THREE.MeshBasicMaterial({
+            color: 0x000000,
+            wireframe: true,
+            side: THREE.DoubleSide,
+        })
+
+        const tube = new THREE.Mesh(geometry, material);
+        scene.add(tube);
+
+
+        function updateCamera() {
+            const time = clock.getElapsedTime();
+            const looptime = 20;
+            const t = (time % looptime) / looptime;
+            const t2 = ((time + 0.1) % looptime) / looptime;
+            const pos = tube.geometry.parameters.path.getPointAt(t);
+            const pos2 = tube.geometry.parameters.path.getPointAt(t2);
+            camera.position.copy(pos);
+            camera.lookAt(pos2);
+        }
+
+        const animate = function () {
+            requestAnimationFrame(animate);
+            updateCamera();
+
+            renderer.render(scene, camera);
+        };
+
+        animate();
+
+    </script>
+</body>
+
+</html>

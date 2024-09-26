@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Security App</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        table tr td {
+            vertical-align: middle !important;
+            padding: 3px 0 !important;
+        }
+
+        .bg-second2 {
+            background-color: #f5f6f8 !important;
+        }
+
+        .c-box-shadow {
+            box-shadow: 0 7px 9px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .fs20 {
+            font-size: 20px !important;
+        }
+
+        .fs14 {
+            font-size: 14px !important;
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            padding: 0.8rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div id="wrapper">
+        <div class="body-wrap bg-second2 c-box-shadow">
+            <div class="body">
+                <div class="body-header bg-white" style="border-bottom: 1px solid #dee2e6">
+                    <div class="body-header-content d-flex justify-content-between align-items-center">
+                        <div>
+                            <a href="index.html"><i class="fa fa-angle-left text-primary fs20"></i></a>
+                            &nbsp;&nbsp;&nbsp;
+                            <b class="text-primary h4">Data Visitor</b>
+                        </div>
+                        <div onclick="showFilter()">
+                            <i class="fa fa-filter text-primary fs20"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-content bg-second2" style="padding-bottom: 50px">
+                    <div class="row px-3">
+                        <div class="col-4 mb-4">
+                            <div class="card h-100 py-1">
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="fs20 fw-bold">5</div>
+                                    </div>
+                                    <div class="text-muted fs14">Check-in</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card h-100 py-1">
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="fs20 fw-bold">3</div>
+                                    </div>
+                                    <div class="text-muted fs14">Check-out</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card h-100 py-1">
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <i class="fa fa-qrcode text-primary fs20"></i>
+                                    </div>
+                                    <div class="text-muted fs14">Scan QR</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row px-3">
+                        <div class="col-12 mb-3 px-3">
+                            <h4 class="text-primary">List Visitor</h4>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td rowspan="5" width="20%">
+                                                <img src="images/orang2.png" class="border rounded me-3" alt=""
+                                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-primary fs14 fw-bold">Anton Masudi</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="18%">NIK:</td>
+                                            <td>
+                                                <div>742323213991154</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>PIC:</td>
+                                            <td>
+                                                <div>Rahmat Sudarto</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tujuan:</td>
+                                            <td>
+                                                <div>Gedung A</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td rowspan="5" width="20%">
+                                                <img src="images/foto-orang.jpg" class="border rounded me-3" alt=""
+                                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-primary fs14 fw-bold">Bambang Hermawan</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="18%">NIK:</td>
+                                            <td>
+                                                <div>74232321111154</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>PIC:</td>
+                                            <td>
+                                                <div>Rahmat Sudarto</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tujuan:</td>
+                                            <td>
+                                                <div>Gedung A</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td rowspan="5" width="20%">
+                                                <img src="images/orang.png" class="border rounded me-3" alt=""
+                                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-primary fs14 fw-bold">Wawan Setiawan</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="18%">NIK:</td>
+                                            <td>
+                                                <div>7512334310411</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>PIC:</td>
+                                            <td>
+                                                <div>Asep Sudarmajid</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tujuan:</td>
+                                            <td>
+                                                <div>Gedung B</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar-wrap border-top">
+            <div class="menubar-footer py-2 px-3">
+                <button type="button" class="btn btn-outline-primary btn-block" style="font-size: 12px;">
+                    LOAD MORE
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Modal Konfirmasi -->
+    <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form action="">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="filterModalLabel">Filter</h5>
+                        <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group mb-4">
+                            <label for="tanggalKunjungan" class="mb-2">Tanggal Kunjungan</label>
+                            <input type="date" class="form-control" name="tanggalKunjungan" id="tanggalKunjungan">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="kodeQr" class="mb-2">Kode QR</label>
+                            <input type="text" class="form-control" name="kodeQr" id="kodeQr">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="kategoriTamu" class="mb-2">Kategori Tamu</label>
+                            <select name="kategoriTamu" id="kategoriTamu" class="form-control" style="width: 100%">
+                                <option value="">Pilih Kategori Tamu</option>
+                                <option value="1">Maintenance</option>
+                                <option value="2">Meeting</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="status" type="radio" id="semua" value="all">
+                                <label class="form-check-label mt-1" for="semua">Semua</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="status" type="radio" id="checkin" value="checkin">
+                                <label class="form-check-label mt-1" for="checkin">Check-In</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="status" type="radio" id="checkout"
+                                    value="checkout">
+                                <label class="form-check-label mt-1" for="checkout">Check-Out</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row w-100">
+                            <div class="col-6 ps-0">
+                                <button type="button" class="btn btn-secondary btn-block w-100" data-mdb-ripple-init
+                                    data-mdb-dismiss="modal">
+                                    Batal
+                                </button>
+                            </div>
+                            <div class="col-6 pe-0">
+                                <button type="button" class="btn btn-primary btn-block w-100">
+                                    Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <script src="js/fade.js"></script>
+    <script>
+        function showFilter() {
+            $('#filterModal').modal('show');
+        }
+    </script>
+</body>
+
+</html>

@@ -35,7 +35,7 @@
 
         .nav-tabs .nav-item.show .nav-link,
         .nav-tabs .nav-link.active {
-            background-color: #b7c913;
+            background-color: #14a44d;
             border: 1px solid #7f7f80;
             border-radius: 5px;
             color: #fff !important;
@@ -84,9 +84,16 @@
                                     <td><span id="namaSuami" class="fs14"></span></td>
                                 </tr>
                             </table>
-                            <table>
+                            <h4 class="fw-bold">Riwayat Screening Terakhir</h4>
+                            <div id="riwayatScreening" class="mb-3 fs16">
+                                Belum ada riwayat screening
+                            </div>
+                            <a href="screening.html" class="btn btn-success fs14 text-white">
+                                Tambah Screening
+                            </a>
+                            <!-- <table>
                                 <tr>
-                                    <td class="fs14 fw-bold" colspan="3">Riwayat Screening</td>
+                                    <td class="fs14 fw-bold" colspan="3"></td>
                                 </tr>
                                 <tbody id="riwayatScreening">
                                     <tr>
@@ -103,7 +110,7 @@
                                         </td>
                                     </tr>
                                 </tfoot>
-                            </table>
+                            </table> -->
                         </div>
                     </div>
                 </div>
@@ -129,22 +136,34 @@
             if (screenings && screenings.length > 0) {
                 let tr = ``;
                 $.each(screenings, function (i, screening) {
-                    tr += `<tr style="background-color: #f8f9fa; margin-bottom: 10px;">
-                        <td class="text-center align-middle" style="width: 5%; font-weight: bold;">${i + 1}</td>
-                        <td>
-                            <a href="screening-hasil-detail.html?id=${i}" class="text-decoration-none text-info fw-bold">
-                                ${screening.date}
-                            </a>  
-                        </td>
-                        <td class="text-center align-middle" style="width: 10%;">
-                            <button class="btn btn-danger btn-sm" onclick="deleteScreening(${i})">
-                                <span class="fs14">&times</span>
-                            </button>
-                        </td>
-                    </tr>`;
+                    // tr += `<tr style="background-color: #f8f9fa; margin-bottom: 10px;">
+                    //     <td class="text-center align-middle" style="width: 5%; font-weight: bold;">${i + 1}</td>
+                    //     <td>
+                    //         <a href="screening-hasil-detail.html?id=${i}" class="text-decoration-none text-info fw-bold">
+                    //             ${screening.date}
+                    //         </a>  
+                    //     </td>
+                    //     <td class="text-center align-middle" style="width: 10%;">
+                    //         <button class="btn btn-danger btn-sm" onclick="deleteScreening(${i})">
+                    //             <span class="fs14">&times</span>
+                    //         </button>
+                    //     </td>
+                    // </tr>`;
+
+                    tr += `
+                        <div class="card mb-1"  onclick="window.location.href = 'screening-hasil-detail.html?id=${i}';">
+                            <div class="card-body d-flex justify-content-between align-items-center p-1 px-2">
+                                <div class="d-flex">
+                                    <div class="me-2 fs14">${screening.date}</div>
+                                </div>
+                                <button class="btn btn-link text-danger fs14 font-weight-bold" onclick="deleteScreening(${i})">
+                                    &times;
+                                </button>
+                            </div>
+                        </div>`;
                 });
 
-                $('tbody#riwayatScreening').html(tr);
+                $('#riwayatScreening').html(tr);
             }
         })
 

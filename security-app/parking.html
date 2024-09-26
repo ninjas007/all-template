@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Security App</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        table tr td {
+            vertical-align: bottom !important;
+            padding: 4px 0 !important;
+        }
+
+        .bg-second2 {
+            background-color: #f5f6f8 !important;
+        }
+
+        .c-box-shadow {
+            box-shadow: 0 7px 9px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .fs20 {
+            font-size: 20px !important;
+        }
+
+        .fs14 {
+            font-size: 14px !important;
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            padding: 0.8rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div id="wrapper">
+        <div class="body-wrap bg-second2 c-box-shadow">
+            <div class="body">
+                <div class="body-header bg-white" style="border-bottom: 1px solid #dee2e6">
+                    <div class="body-header-content d-flex justify-content-between align-items-center">
+                        <div>
+                            <a href="index.html"><i class="fa fa-angle-left text-primary fs20"></i></a>
+                            &nbsp;&nbsp;&nbsp;
+                            <b class="text-primary h4">Data Parkir</b>
+                        </div>
+                        <div onclick="showFilter()">
+                            <i class="fa fa-filter text-primary fs20"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-content bg-second2" style="padding-bottom: 50px">
+                    <div class="row px-3">
+                        <div class="col-4 mb-4">
+                            <div class="card h-100 py-1">
+                                <div class="card-body p-3">
+                                    <div class="mb-3">
+                                        <div class="fs20"><span class="fw-bold fs20">8</span>/10</div>
+                                    </div>
+                                    <div class="text-muted fs14">Available</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card h-100 py-1">
+                                <div class="card-body p-3">
+                                    <div class="mb-3">
+                                        <div class="fs20 fw-bold text-success">2</div>
+                                    </div>
+                                    <div class="text-muted fs14">Free Slot</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card h-100 py-1">
+                                <div class="card-body p-3">
+                                    <div class="mb-3">
+                                        <div class="fs20"><span class="fw-bold fs20">8</span>/10</div>
+                                    </div>
+                                    <div class="text-muted fs14">Scan</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card h-100 py-1">
+                                <div class="card-body p-3">
+                                    <div class="mb-3">
+                                        <div class="fs20 fw-bold">5</div>
+                                    </div>
+                                    <div class="text-muted fs14">Check-in</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card h-100 py-1">
+                                <div class="card-body p-3">
+                                    <div class="mb-3">
+                                        <div class="fs20 fw-bold">3</div>
+                                    </div>
+                                    <div class="text-muted fs14">Check-out</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-4">
+                            <div class="card h-100 py-1">
+                                <div class="card-body p-3">
+                                    <div class="mb-3">
+                                        <i class="fa fa-map-marker-alt text-primary fs20"></i>
+                                    </div>
+                                    <div class="text-muted fs14">Map</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row px-3">
+                        <div class="col-12 mb-3 px-3">
+                            <h4 class="text-primary">List Parking</h4>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td colspan="2" class="text-primary fs14 fw-bold">Kode Parkir #54411</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="25%">Status:</td>
+                                            <td>
+                                                <div class="text-success">Check-in</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lokasi:</td>
+                                            <td>
+                                                <div>Area Parking A</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plat Mobil:</td>
+                                            <td>
+                                                <div>B 1234 AB</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td colspan="2" class="text-primary fs14 fw-bold">Kode Parkir #23121</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="25%">Status:</td>
+                                            <td>
+                                                <div class="text-danger">Check-out</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lokasi:</td>
+                                            <td>
+                                                <div>Area Parking A</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plat Mobil:</td>
+                                            <td>
+                                                <div>B 1234 AB</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td colspan="2" class="text-primary fs14 fw-bold">Kode Parkir #13223</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="25%">Status:</td>
+                                            <td>
+                                                <div class="text-danger">Check-out</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lokasi:</td>
+                                            <td>
+                                                <div>Area Parking A</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plat Mobil:</td>
+                                            <td>
+                                                <div>B 1234 AB</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td colspan="2" class="text-primary fs14 fw-bold">Kode Parkir #33333</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="25%">Status:</td>
+                                            <td>
+                                                <div class="text-danger">Check-out</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lokasi:</td>
+                                            <td>
+                                                <div>Area Parking A</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plat Mobil:</td>
+                                            <td>
+                                                <div>B 1234 AB</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar-wrap border-top">
+            <div class="menubar-footer py-2 px-3">
+                <button type="button" class="btn btn-outline-primary btn-block" style="font-size: 12px;">
+                    LOAD MORE
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Modal Konfirmasi -->
+    <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form action="">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="filterModalLabel">Filter</h5>
+                        <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group mb-4">
+                            <label for="tanggalKunjungan" class="mb-2">Tanggal Kunjungan</label>
+                            <input type="date" class="form-control" name="tanggalKunjungan" id="tanggalKunjungan">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="areaParkir" class="mb-2">Area Parkir</label>
+                            <select name="areaParkir" id="areaParkir" class="form-control" style="width: 100%">
+                                <option value="">Pilih Area Parkir</option>
+                                <option value="1">Area Parkir 1</option>
+                                <option value="2">Area Parkir 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="platMobil" class="mb-2">Plat Mobil</label>
+                            <input type="text" class="form-control" name="platMobil" id="platMobil">
+                        </div>
+                        <div class="form-group mb-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="status" type="radio" id="semua" value="all">
+                                <label class="form-check-label mt-1" for="semua">Semua</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="status" type="radio" id="checkin" value="checkin">
+                                <label class="form-check-label mt-1" for="checkin">Check-In</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="status" type="radio" id="checkout" value="checkout">
+                                <label class="form-check-label mt-1" for="checkout">Check-Out</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row w-100">
+                            <div class="col-6 ps-0">
+                                <button type="button" class="btn btn-secondary btn-block w-100" data-mdb-ripple-init
+                                    data-mdb-dismiss="modal">
+                                   Batal
+                                </button>
+                            </div>
+                            <div class="col-6 pe-0">
+                                <button type="button" class="btn btn-primary btn-block w-100">
+                                   Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <script src="js/fade.js"></script>
+    <script>
+        function showFilter() {
+            $('#filterModal').modal('show');
+        }
+    </script>
+</body>
+
+</html>

@@ -17,9 +17,18 @@
 
     <link rel="stylesheet" href="css/menubar.css">
     <style>
+        .body-wrap {
+            height: 100%;
+        }
+
         .input-group .input-group-text,
         .input-group>.form-control {
             height: calc(2.5rem + 2px);
+        }
+
+        .border {
+            border: 1px solid #ffffff !important;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -36,44 +45,41 @@
                 <div class="body-content p-4" style="margin-top: 50px">
                     <div class="row">
                         <div class="col-12">
-                            <div class="card" style="background-color: #ffffffda;">
+                            <div class="">
                                 <div class="card-header">
-                                    <h3 class="text-dark text-center">Monitoring</h3>
+                                    <h3 class="text-dark py-2 fw-bold">Monitoring</h3>
                                 </div>
                                 <div class="card-body">
-                                    <div class="row mb-4">
+                                    <h4 class="mb-3 my-3">Umur Kandungan</h4>
+                                    <div class="row">
                                         <div class="col-12">
-                                            <div id="umurKandunganCollapse" class="border p-2 rounded">
-                                                <h4 class="mb-3">Umur Kandungan</h4>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="form-group mb-4">
-                                                            <label class="mb-2 fs14" for="hpht">HPHT (Hari Pertama Haid
-                                                                Terakhir)</label>
-                                                            <input type="date" class="fs14 form-control border"
-                                                                id="hpht">
-                                                        </div>
-                                                        <div class="form-group mb-4">
-                                                            <label class="mb-2 fs14" for="tanggalCekTerakhir">Tanggal
-                                                                Cek Terakhir</label>
-                                                            <input type="date" class="fs14 form-control border"
-                                                                id="tanggalCekTerakhir">
-                                                            <div class="mt-3 fw-bold fs14" id="hasilUmurKandungan"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <button class="btn btn-info" style="font-size: 12px;"
-                                                            id="btnHasilUmurKandungan">Cek</button>
-                                                    </div>
+                                            <div class="border p-3">
+                                                <div class="form-group mb-4">
+                                                    <label class="mb-2 fs14" for="hpht">HPHT (Hari Pertama Haid
+                                                        Terakhir)</label>
+                                                    <input type="date" class="fs14 form-control border" id="hpht">
                                                 </div>
+                                                <div class="form-group">
+                                                    <label class="mb-2 fs14" for="tanggalCekTerakhir">Tanggal
+                                                        Cek Terakhir</label>
+                                                    <input type="date" class="fs14 form-control border"
+                                                        id="tanggalCekTerakhir">
+                                                    <div class="my-3 fw-bold fs14" id="hasilUmurKandungan"></div>
+                                                </div>
+
+                                                <button class="btn btn-success btn-block" id="btnHasilUmurKandungan"
+                                                    style="font-size: 12px;">
+                                                    Cek dan Simpan
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row mb-4">
+
+                                    <h4 class="mb-3 my-3">Tekanan Darah</h4>
+                                    <div class="row mb-3">
                                         <div class="col-12">
-                                            <div id="tekananDarahCollapse" class="border p-2 rounded">
-                                                <h4 class="mb-3">Tekanan Darah</h4>
-                                                <div class="row mb-2">
+                                            <div class="border p-2">
+                                                <div class="row">
                                                     <div class="col-8">
                                                         <div class="d-flex justify-content-center">
                                                             <div>
@@ -90,40 +96,40 @@
                                                     </div>
 
                                                     <div class="col-4">
-                                                        <button type="button" class="btn btn-info"
+                                                        <button type="button" class="btn btn-success btn-block"
                                                             id="btnHasilTekananDarah"
                                                             style="font-size: 12px;">Simpan</button>
                                                     </div>
-                                                </div>
-                                                <div class="row">
+
                                                     <div class="col-12 px-3">
-                                                        <div class="mb-3 fs14 fw-bold" id="hasilTekananDarah"></div>
+                                                        <div class="fs14 fw-bold" id="hasilTekananDarah"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <h4 class="mb-3">Denyut Jantung Janin</h4>
                                     <div class="row mb-4">
                                         <div class="col-12">
                                             <div id="denyutJantungJaninCollapse" class="border p-2 rounded">
-                                                <h4 class="mb-3">Denyut Jantung Janin</h4>
-                                                <div class="row mb-2">
+                                                <div class="row">
                                                     <div class="col-8">
-                                                        <div class="input-group mb-3">
+                                                        <div class="input-group">
                                                             <input type="number" class="form-control border"
                                                                 id="denyutJantungJanin" />
-                                                            <span class="input-group-text border">x/menit</span>
+                                                            <span class="input-group-text border fs12">x/menit</span>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <button type="button" class="btn btn-info"
+                                                        <button type="button" class="btn btn-success btn-block"
                                                             id="btnHasilDenyutJantungJanin"
                                                             style="font-size: 12px;">Simpan</button>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-12 px-3">
-                                                        <div class="mb-3 fs14 fw-bold" id="hasilDenyutJantungJanin"></div>
+                                                        <div class="fs14 fw-bold" id="hasilDenyutJantungJanin"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,7 +137,9 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="monitoring-hasil.html" class="btn btn-info btn-block text-white">Lihat Riwayat</a>
+                                    <a href="monitoring-hasil.html" class="btn btn-success fw-bold btn-block text-white fs14">
+                                        Lihat Riwayat
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -158,15 +166,23 @@
                     return;
                 }
 
+
                 // get weeks and days range hpht and tanggakCekTerakhir
                 let hphtDate = new Date(hpht);
                 let cekTerakhirDate = new Date(tanggalCekTerakhir);
-                let weeks = Math.abs(hphtDate - cekTerakhirDate) / (1000 * 60 * 60 * 24 * 7);
+
+                if (hphtDate > cekTerakhirDate) {
+                    alert('HPHT tidak boleh lebih besar dari tanggal cek terakhir');
+                    return;
+                }
+
+                // let weeks = Math.abs(hphtDate - cekTerakhirDate) / (1000 * 60 * 60 * 24 * 7);
                 let days = Math.abs(hphtDate - cekTerakhirDate) / (1000 * 60 * 60 * 24);
 
-                let hasilUmurKandungan = `${Math.floor(weeks)} Minggu ${Math.floor(days)} Hari`;
 
-                let dataUmurKandungan = localStorage.getItem('dataUmurKandungan') ||  null;
+                let hasilUmurKandungan = `${Math.floor(days / 7)} Minggu dan ${days % 7} Hari`;
+
+                let dataUmurKandungan = localStorage.getItem('dataUmurKandungan') || null;
 
                 if (dataUmurKandungan && dataUmurKandungan != null) {
 

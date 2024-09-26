@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Security App</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        table tr td {
+            vertical-align: middle !important;
+            padding: 3px 0 !important;
+        }
+
+        .bg-second2 {
+            background-color: #f5f6f8 !important;
+        }
+
+        .c-box-shadow {
+            box-shadow: 0 7px 9px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .fs20 {
+            font-size: 20px !important;
+        }
+
+        .fs16 {
+            font-size: 16px !important;
+        }
+
+        .fs14 {
+            font-size: 14px !important;
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            padding: 0.8rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100% !important;
+        }
+
+        .btn-upload {
+            border: 1px solid #3A71CA;
+            color: #3A71CA;
+            background-color: white;
+            padding: 0.8rem 0.75rem;
+            border-radius: 5px;
+            width: 100% !important;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div id="wrapper">
+        <div class="body-wrap bg-second2 c-box-shadow">
+            <div class="body">
+                <div class="body-header bg-white" style="border-bottom: 1px solid #dee2e6">
+                    <div class="body-header-content d-flex justify-content-between align-items-center">
+                        <div>
+                            <a href="index.html"><i class="fa fa-angle-left text-primary fs20"></i></a>
+                            &nbsp;&nbsp;&nbsp;
+                            <b class="text-primary h4">Data Alert</b>
+                        </div>
+                        <!-- <div onclick="alertNote('Decline')">
+                            <i class="fa fa-filter text-primary fs20"></i>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="body-content bg-second2" style="padding-bottom: 50px">
+                    <div class="row px-3">
+                        <div class="col-12 mb-3 px-3">
+                            <h4 class="text-primary">List Alert</h4>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100 card-item">
+                                <div class="card-body px-3">
+                                    <div class="d-flex justify-content-between">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td colspan="2" class="text-primary fs14 fw-bold">Wrong Location</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="35%">NIK</td>
+                                                <td>: 742323213991154</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plat Nomor</td>
+                                                <td>: B 1234 AB</td>
+                                            </tr>
+                                        </table>
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <div class="btn shadow-0" onclick="alertNote('Accept')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-check text-success fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-success">Accept</span>
+                                            </div>
+                                            <div class="btn shadow-0" onclick="alertNote('Decline')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-times text-danger fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-danger">Decline</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 mb-3">
+                            <div class="card h-100 card-item">
+                                <div class="card-body px-3">
+                                    <div class="d-flex justify-content-between">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td colspan="2" class="text-primary fs14 fw-bold">Wrong Location</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="35%">NIK</td>
+                                                <td>: 742323213991154</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plat Nomor</td>
+                                                <td>: B 1234 AB</td>
+                                            </tr>
+                                        </table>
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <div class="btn shadow-0" onclick="alertNote('Accept')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-check text-success fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-success">Accept</span>
+                                            </div>
+                                            <div class="btn shadow-0" onclick="alertNote('Decline')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-times text-danger fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-danger">Decline</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100 card-item">
+                                <div class="card-body px-3">
+                                    <div class="d-flex justify-content-between">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td colspan="2" class="text-primary fs14 fw-bold">Wrong Location</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="35%">NIK</td>
+                                                <td>: 742323213991154</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plat Nomor</td>
+                                                <td>: B 1234 AB</td>
+                                            </tr>
+                                        </table>
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <div class="btn shadow-0" onclick="alertNote('Accept')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-check text-success fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-success">Accept</span>
+                                            </div>
+                                            <div class="btn shadow-0" onclick="alertNote('Decline')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-times text-danger fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-danger">Decline</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100 card-item">
+                                <div class="card-body px-3">
+                                    <div class="d-flex justify-content-between">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td colspan="2" class="text-primary fs14 fw-bold">Wrong Location</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="35%">NIK</td>
+                                                <td>: 742323213991154</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plat Nomor</td>
+                                                <td>: B 1234 AB</td>
+                                            </tr>
+                                        </table>
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <div class="btn shadow-0" onclick="alertNote('Accept')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-check text-success fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-success">Accept</span>
+                                            </div>
+                                            <div class="btn shadow-0" onclick="alertNote('Decline')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-times text-danger fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-danger">Decline</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100 card-item">
+                                <div class="card-body px-3">
+                                    <div class="d-flex justify-content-between">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td colspan="2" class="text-primary fs14 fw-bold">Wrong Location</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="35%">NIK</td>
+                                                <td>: 742323213991154</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plat Nomor</td>
+                                                <td>: B 1234 AB</td>
+                                            </tr>
+                                        </table>
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <div class="btn shadow-0" onclick="alertNote('Accept')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-check text-success fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-success">Accept</span>
+                                            </div>
+                                            <div class="btn shadow-0" onclick="alertNote('Decline')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-times text-danger fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-danger">Decline</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100 card-item">
+                                <div class="card-body px-3">
+                                    <div class="d-flex justify-content-between">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td colspan="2" class="text-primary fs14 fw-bold">Wrong Location</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="35%">NIK</td>
+                                                <td>: 742323213991154</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plat Nomor</td>
+                                                <td>: B 1234 AB</td>
+                                            </tr>
+                                        </table>
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <div class="btn shadow-0" onclick="alertNote('Accept')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-check text-success fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-success">Accept</span>
+                                            </div>
+                                            <div class="btn shadow-0" onclick="alertNote('Decline')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-times text-danger fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-danger">Decline</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="card h-100 card-item">
+                                <div class="card-body px-3">
+                                    <div class="d-flex justify-content-between">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td colspan="2" class="text-primary fs14 fw-bold">Wrong Location</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="35%">NIK</td>
+                                                <td>: 742323213991154</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plat Nomor</td>
+                                                <td>: B 1234 AB</td>
+                                            </tr>
+                                        </table>
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <div class="btn shadow-0" onclick="alertNote('Accept')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-check text-success fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-success">Accept</span>
+                                            </div>
+                                            <div class="btn shadow-0" onclick="alertNote('Decline')">
+                                                <div class="mb-2">
+                                                    <i class="fa fa-times text-danger fw-bold fs16"></i>
+                                                </div>
+                                                <span class="text-danger">Decline</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar-wrap border-top">
+            <div class="menubar-footer py-2 px-3">
+                <button type="button" class="btn btn-outline-primary btn-block" style="font-size: 12px;">
+                    LOAD MORE
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Modal Konfirmasi -->
+    <div class="modal fade" id="noteAlert" tabindex="-1" role="dialog" aria-labelledby="noteAlertLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form action="">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="noteAlertLabel">Notes</h5>
+                        <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group mb-4">
+                            <label for="subject" class="mb-2">Subject</label>
+                            <input type="text" class="form-control" name="subject" id="subject">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="deskripsi" class="mb-2">Deskripsi</label>
+                            <input type="text" class="form-control" name="deskripsi" id="deskripsi">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="mb-1" for="gambar">Gambar</label>
+                            <br>
+                            <div class="upload-btn-wrapper" id="gambarWrapper">
+                                <button class="btn-upload">
+                                    <i class="fa fa-upload"></i> Upload Gambar
+                                </button>
+                                <input type="file" name="gambar" id="gambar"
+                                    onchange="previewAndReplace(event, 'gambarWrapper')" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row w-100">
+                            <div class="col-6 ps-0">
+                                <button type="button" class="btn btn-secondary btn-block w-100" data-mdb-ripple-init
+                                    data-mdb-dismiss="modal">
+                                    Batal
+                                </button>
+                            </div>
+                            <div class="col-6 pe-0">
+                                <button type="button" class="btn btn-primary btn-block w-100">
+                                    Kirim
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <script src="js/fade.js"></script>
+    <script src="js/changeheight.js"></script>
+    <script>
+        function alertNote(note) {
+            $('#noteAlert').modal('show');
+            $('#noteAlertLabel').text(note);
+        }
+
+        function previewAndReplace(event, wrapperId) {
+            const input = event.target;
+            const file = input.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const wrapper = document.getElementById(wrapperId);
+                    // Replace content of wrapper with preview and file size, and add a close button using Bootstrap classes
+                    wrapper.innerHTML = `
+                <div class="d-flex align-items-center position-relative w-100 btn-upload">
+                    <img src="${e.target.result}" alt="Preview" class="img-fluid rounded me-3" style="width: 40px; height: 40px; object-fit: cover;" />
+                    <div class="flex-grow-1">
+                        <span class="d-block fw-bold text-primary">${file.name}</span>
+                        <span class="text-muted">Ukuran file: ${(file.size / 1024).toFixed(2)} KB</span>
+                    </div>
+                    <button type="button" class="btn btn-link text-danger position-absolute top-0 end-0" onclick="removePreview('${wrapperId}')">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>`;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removePreview(wrapperId) {
+            const wrapper = document.getElementById(wrapperId);
+            // Restore the original upload button and input
+
+            if (wrapperId == 'gambarWrapper') {
+                textButton = '<i class="fa fa-upload"></i> Upload Gambar';
+            }
+
+            wrapper.innerHTML = `
+                <button class="btn-upload">
+                    ${textButton}
+                </button>
+                <input type="file" accept="image/*" onchange="previewAndReplace(event, '${wrapperId}')" />
+            `;
+        }
+
+    </script>
+</body>
+
+</html>

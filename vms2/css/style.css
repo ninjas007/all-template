@@ -4,11 +4,6 @@
     font-size: 12px;
     letter-spacing: 0.03em;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-:root {
-    --bg-primary: rgb(203, 249, 255);
 }
 
 html,
@@ -65,7 +60,7 @@ body {
 .navbar-wrap,
 .menubar-footer {
     max-width: 100%;
-    width: 480px;
+    width: 425px;
 }
 
 .navbar-wrap {
@@ -81,15 +76,16 @@ body {
     right: 0px;
     bottom: 0px;
     z-index: 10;
-    border-style: solid;
-    border-width: 1px 0px 0px;
-    --tw-border-opacity: 1;
-    border-color: rgba(224, 224, 224, var(--tw-border-opacity));
+    /* border-style: solid; */
+    /* border-width: 1px 0px 0px; */
+    /* --tw-border-opacity: 1; */
+    /* border-color: rgba(224, 224, 224, var(--tw-border-opacity)); */
 }
 
 .body-wrap {
+    background: #ffffff;
     margin: 0px auto;
-    height: 100%;
+    height: max-content;
 }
 
 .body {
@@ -106,8 +102,7 @@ body {
 
 .body-header-content {
     color: #ffffff;
-    text-align: center;
-    margin: 7px 0px;
+    margin: 10px;
     font-weight: bold;
 }
 
@@ -121,7 +116,11 @@ body {
 }
 
 body {
-    background-repeat: repeat;
+    background-image: url('../images/bg.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .container {
@@ -136,7 +135,7 @@ body {
 }
 
 .active-menu {
-    color: #54b4d3 !important
+    color: #3A71CA !important
 }
 
 .menu-title {
@@ -189,42 +188,3 @@ a {
     opacity: 1;
 }
 
-.text-dark {
-    color: #686868 !important;
-}
-
-.btn-lg {
-    border-radius: 20px !important; 
-    font-size: 20px !important;
-}
-
-.fs24 {
-    font-size: 24px !important;
-}
-
-.fs20 {
-    font-size: 20px !important;
-}
-
-.fs16 {
-    font-size: 16px !important;
-}
-
-.fs14 {
-    font-size: 14px !important;
-}
-
-.form-control {
-    background-color: #f1feff;
-    border: none;
-}
-
-.form-control:focus {
-    background-color: #fffadc;
-    border: 0.5px solid #ffffff;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}

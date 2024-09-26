@@ -17,6 +17,10 @@
 
     <link rel="stylesheet" href="css/menubar.css">
     <style>
+        #wrapper {
+            height: initial !important;
+        }
+
         table tr td {
             padding: 5px 3px;
         }
@@ -31,13 +35,13 @@
         .nav-tabs .nav-item.show .nav-link,
         .nav-tabs .nav-link {
             color: #000 !important;
-            
+
 
         }
 
         .nav-tabs .nav-item.show .nav-link,
         .nav-tabs .nav-link.active {
-            background-color: #b7c913;
+            background-color: #14a44d;
             border: 1px solid #7f7f80;
             border-radius: 5px;
             color: #fff !important;
@@ -59,7 +63,7 @@
                         <div class="col-12 mb-4">
                             <ul class="nav nav-tabs justify-content-center d-flex">
                                 <li class="nav-item" style="background-color: transparent;">
-                                    <a class="nav-link" href="screening-hasil.html">Riwayat Screening</a>
+                                    <a class="nav-link fw-bold" href="screening-hasil.html">Riwayat Screening</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" href="monitoring-hasil.html">Riwayat Monitoring</a>
@@ -67,50 +71,26 @@
                             </ul>
                         </div>
                         <div class="col-12 mb-4">
-                            <table class="mb-3">
-                                <thead>
-                                    <tr>
-                                        <th class="fs12 fw-bold" colspan="4">Umur Kandungan</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="riwayatUmurKandungan">
-                                    <tr>
-                                        <td colspan="4">Belum ada riwayat Umur Kandungan</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="mb-3">
-                                <thead>
-                                    <tr>
-                                        <th class="fs12 fw-bold" colspan="4">Tekanan Darah</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="riwayatTekananDarah">
-                                    <tr>
-                                        <td colspan="4">Belum ada riwayat Tekanan Darah</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="mb-3">
-                                <thead>
-                                    <tr>
-                                        <th class="fs12 fw-bold" colspan="3">Denyut Jantung Janin</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="riwayatDenyutJantungJanin">
-                                    <tr>
-                                        <td colspan="3">Belum ada riwayat Denyut Jantung Janin</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="3" style="padding: 10px 0px">
-                                            <a href="monitoring.html" class="btn btn-info text-white">Tambah
-                                                Monitoring</a>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                            <div class="mb-2 fs16 fw-bold">Riwayat Terakhir Umur Kandungan</div>
+                            <div id="riwayatUmurKandungan" class="mb-3 fs16">
+                                Belum ada riwayat Umur Kandungan
+                            </div>
+
+                            <div class="mb-2 fs16 fw-bold">Riwayat Terakhir Tekanan Darah</div>
+                            <div id="riwayatTekananDarah" class="mb-3 fs16">
+                                Belum ada riwayat Tekanan Darah
+                            </div>
+
+                            <div class="mb-2 fs16 fw-bold">Riwayat Terakhir Denyut Jantung Janin</div>
+                            <div id="riwayatDenyutJantungJanin" class="mb-3 fs16">
+                                Belum ada riwayat Denyut Jantung Janin
+                            </div>
+
+                            <div class="fs14 fw-bold">
+                                <a href="monitoring.html" class="btn btn-success btn-block text-white fs14">
+                                    Tambah Monitoring
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -144,70 +124,65 @@
             if (dataUmurKandungan && dataUmurKandungan.length > 0) {
                 let tr = ``;
                 $.each(dataUmurKandungan, function (i, item) {
-                    tr += `<tr style="background-color: #f8f9fa; margin-bottom: 10px;">
-                        <td class="text-center align-middle" style="width: 5%; ">${i + 1}</td>
-                        <td width="35%">
-                            ${item.date} 
-                        </td>
-                        <td>
-                            ${item.hasilUmurKandungan}
-                        </td>
-                        <td class="text-center align-middle" style="width: 10%;">
-                            <button class="btn btn-danger btn-sm" onclick="deleteUmurKandungan(${i})">
-                                <span class="fs12">&times</span>
-                            </button>
-                        </td>
-                    </tr>`;
+                    tr += `
+                        <div class="card mb-1">
+                            <div class="card-body d-flex justify-content-between align-items-center p-1 px-2">
+                                <div class="d-flex">
+                                    <div class="me-2 fs14">${item.date}</div>
+                                    <div class="fs14"> - ${item.hasilUmurKandungan}</div>
+                                </div>
+                                <button class="btn btn-link text-danger fs14 font-weight-bold" onclick="deleteUmurKandungan(${i})">
+                                    &times;
+                                </button>
+                            </div>
+                        </div>`;
                 });
 
-                $('tbody#riwayatUmurKandungan').html(tr);
+                $('#riwayatUmurKandungan').html(tr);
             }
         }
         function getDataTekananDarah(dataTekananDarah) {
             if (dataTekananDarah && dataTekananDarah.length > 0) {
                 let tr = ``;
                 $.each(dataTekananDarah, function (i, item) {
-                    tr += `<tr style="background-color: #f8f9fa; margin-bottom: 10px;">
-                        <td class="text-center align-middle" style="width: 5%; ">${i + 1}</td>
-                        <td width="35%">
-                            ${item.date} 
-                        </td>
-                        <td>
-                            ${item.hasilTekananDarah}
-                        </td>
-                        <td class="text-center align-middle" style="width: 10%;">
-                            <button class="btn btn-danger btn-sm" onclick="deleteTekananDarah(${i})">
-                                <span class="fs12">&times</span>
-                            </button>
-                        </td>
-                    </tr>`;
+                    tr += `
+                        <div class="card mb-1">
+                            <div class="card-body d-flex justify-content-between align-items-center p-1 px-2">
+                                <div class="d-flex">
+                                    <div class="me-2 fs14">${item.date}</div>
+                                    <div class="fs14"> - ${item.tekananDarah} - <span class="fw-bold fs14">${item.hasilTekananDarah}</span></div>
+                                </div>
+                                <button class="btn btn-link text-danger fs14 font-weight-bold" onclick="deleteTekananDarah(${i})">
+                                    &times;
+                                </button>
+                            </div>
+                        </div>`;
                 });
 
-                $('tbody#riwayatTekananDarah').html(tr);
+                $('#riwayatTekananDarah').html(tr);
             }
         }
 
         function getDataDenyutJantungJanin(dataDenyutJantungJanin) {
+            console.log(dataDenyutJantungJanin)
             if (dataDenyutJantungJanin && dataDenyutJantungJanin.length > 0) {
                 let tr = ``;
                 $.each(dataDenyutJantungJanin, function (i, item) {
-                    tr += `<tr style="background-color: #f8f9fa; margin-bottom: 10px;">
-                        <td class="text-center align-middle" style="width: 5%; ">${i + 1}</td>
-                        <td width="35%">
-                            ${item.date} 
-                        </td>
-                        <td>
-                            ${item.hasilDenyutJantungJanin}
-                        </td>
-                        <td class="text-center align-middle" style="width: 10%;">
-                            <button class="btn btn-danger btn-sm" onclick="deleteDenyutJantungJanin(${i})">
-                                <span class="fs12">&times</span>
-                            </button>
-                        </td>
-                    </tr>`;
+                    tr += `
+                        <div class="card mb-1">
+                            <div class="card-body d-flex justify-content-between align-items-center p-1 px-2">
+                                <div class="d-flex">
+                                    <div class="me-2 fs14">${item.date}</div>
+                                    <div class="fs14"> -  ${item.denyutJantungJanin}x/menit - <span class="fw-bold fs14">${item.hasilDenyutJantungJanin}</span></div>
+                                </div>
+                                <button class="btn btn-link text-danger fs14 font-weight-bold" onclick="deleteDenyutJantungJanin(${i})">
+                                    &times;
+                                </button>
+                            </div>
+                        </div>`;
                 });
 
-                $('tbody#riwayatDenyutJantungJanin').html(tr);
+                $('#riwayatDenyutJantungJanin').html(tr);
             }
         }
 
