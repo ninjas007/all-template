@@ -33,11 +33,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Align content horizontally */
             justify-content: center;
-            /* Align content vertically */
             text-align: center;
-            /* Center text */
         }
 
         .text-white {
@@ -48,6 +45,30 @@
             border-bottom: 1px solid #fff;
             width: fit-content;
         }
+
+        /* Style untuk ukuran huruf yang lebih responsif */
+        .fs14 { font-size: 1rem; } /* Ukuran dasar untuk mobile */
+        .fs16 { font-size: 1.25rem; }
+        .fs20 { font-size: 1.5rem; }
+        .h4 { font-size: 1.75rem; }
+        .fs30 { font-size: 2rem; } /* Ukuran khusus untuk JIHP */
+
+        /* Media Queries untuk menyesuaikan ukuran huruf di perangkat yang lebih besar */
+        @media (min-width: 768px) {
+            .fs14 { font-size: 1.125rem; }
+            .fs16 { font-size: 1.5rem; }
+            .fs20 { font-size: 1.75rem; }
+            .h4 { font-size: 2rem; }
+            .fs30 { font-size: 2.5rem; }
+        }
+
+        @media (min-width: 992px) {
+            .fs14 { font-size: 1.25rem; }
+            .fs16 { font-size: 1.75rem; }
+            .fs20 { font-size: 2rem; }
+            .h4 { font-size: 2.25rem; }
+            .fs30 { font-size: 3rem; }
+        }
     </style>
 </head>
 
@@ -57,7 +78,7 @@
             <div class="body p-4">
                 <div class="body-content p-2 bg-white">
                     <div class="centered-content" style="margin-top: 20px; margin-bottom: 40px;">
-                        <div style="font-size: 30px; color: #fff; margin-bottom: 10px; font-weight: bold;">JIHP</div>
+                        <div class="fs30 text-white" style="margin-bottom: 10px; font-weight: bold;">JIHP</div>
                         <div class="mb-3 text-white h4">Jaga Ibu Hamil Pesisir</div>
                         <p class="px-3 text-white fs14">Aplikasi yang digunakan untuk mendeteksi kehamilan beresiko</p>
                     </div>

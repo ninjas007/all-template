@@ -4,6 +4,8 @@ function changeHeightBodyWrap() {
 
     if (cardItems < 4) {
         $('.body-wrap').css('height', '100vh');
+    } else {
+        $('.body-wrap').css('height', 'auto');
     }
 }
 

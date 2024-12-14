@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Lokasi Pengguna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #location {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Deteksi Lokasi Pengguna</h1>
+    <button id="getLocation">Dapatkan Lokasi Saya</button>
+    <div id="location"></div>
+
+    <script>
+        document.getElementById('getLocation').addEventListener('click', function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById('location').innerHTML = "Geolocation tidak didukung oleh browser ini.";
+            }
+        });
+
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            document.getElementById('location').innerHTML = `
+        Lokasi Anda:<br>
+        Latitude: ${latitude}<br>
+        Longitude: ${longitude}
+    `;
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById('location').innerHTML = "Pengguna menolak permintaan lokasi.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById('location').innerHTML = "Lokasi tidak tersedia.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById('location').innerHTML = "Permintaan lokasi telah timeout.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById('location').innerHTML = "Terjadi kesalahan yang tidak diketahui.";
+                    break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

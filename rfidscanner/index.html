@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Auto Capture with Table</title>
+    <style>
+        #video {
+            width: 320px;
+            height: 240px;
+            border: 1px solid black;
+        }
+        #snapshot {
+            display: none;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>enter card</h1>
+    <input type="text" id="cardNumber" placeholder="Card Number" autofocus>
+    <br>
+    <br>
+    <video id="video" autoplay></video>
+    <canvas id="snapshot" width="320" height="240"></canvas>
+
+    <h2>Data</h2>
+    <table id="captureTable">
+        <thead>
+            <tr>
+                <th>Waktu</th>
+                <th>Gambar</th>
+                <th>Nomor Kartu</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const video = document.getElementById('video');
+        const snapshotCanvas = document.getElementById('snapshot');
+        const ctx = snapshotCanvas.getContext('2d');
+        const captureTable = document.getElementById('captureTable').querySelector('tbody');
+        const cardNumberInput = document.getElementById('cardNumber');
+
+        // Access the webcam
+        async function startWebcam() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+            } catch (error) {
+                console.error("Error accessing webcam: ", error);
+            }
+        }
+
+        // Capture image and display in table
+        function captureImage() {
+            // Draw video frame to canvas
+            ctx.drawImage(video, 0, 0, snapshotCanvas.width, snapshotCanvas.height);
+            
+            // Convert to data URL
+            const dataUrl = snapshotCanvas.toDataURL('image/png');
+            
+            // Get current time
+            const currentTime = new Date().toLocaleString();
+
+            // Create new row and add to table
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${currentTime}</td>
+                <td><img src="${dataUrl}" alt="Captured Image" width="100"></td>
+                <td>${cardNumberInput.value}</td>
+            `;
+            captureTable.prepend(newRow); // Add new row at the top
+        }
+
+        // Listen for Enter keypress in the input
+        cardNumberInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent form submission if inside a form
+                captureImage();
+
+                // Clear the input field
+                cardNumberInput.value = '';
+
+                // play a sound Absen Selesai.mp3
+                const audio = new Audio('terimakasih.mp3');
+                audio.play();
+            }
+        });
+
+        // Initialize webcam
+        startWebcam();
+    </script>
+</body>
+</html>

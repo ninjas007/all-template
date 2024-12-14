@@ -17,10 +17,6 @@
 
     <link rel="stylesheet" href="css/menubar.css">
     <style>
-        #wrapper {
-            height: initial !important;
-        }
-
         table tr td {
             padding: 5px 3px;
         }
@@ -115,6 +111,12 @@
             let dataTekananDarah = JSON.parse(localStorage.getItem('dataTekananDarah') || '[]');
             let dataDenyutJantungJanin = JSON.parse(localStorage.getItem('dataDenyutJantungJanin') || '[]');
 
+            if (dataUmurKandungan.length <= 2 && dataTekananDarah.length <= 2 && dataDenyutJantungJanin.length <= 2) {
+                $('.body-wrap').css('height', '100vh');
+            } else {
+                $('.body-wrap').css('height', 'auto');
+            }
+
             getDataUmurKandungan(dataUmurKandungan);
             getDataTekananDarah(dataTekananDarah);
             getDataDenyutJantungJanin(dataDenyutJantungJanin);
@@ -128,10 +130,10 @@
                         <div class="card mb-1">
                             <div class="card-body d-flex justify-content-between align-items-center p-1 px-2">
                                 <div class="d-flex">
-                                    <div class="me-2 fs14">${item.date}</div>
-                                    <div class="fs14"> - ${item.hasilUmurKandungan}</div>
+                                    <div class="me-2 fs12">${item.date}</div>
+                                    <div class="fs12"> - ${item.hasilUmurKandungan}</div>
                                 </div>
-                                <button class="btn btn-link text-danger fs14 font-weight-bold" onclick="deleteUmurKandungan(${i})">
+                                <button class="btn btn-link text-danger fs12 font-weight-bold" onclick="deleteUmurKandungan(${i})">
                                     &times;
                                 </button>
                             </div>
@@ -149,10 +151,10 @@
                         <div class="card mb-1">
                             <div class="card-body d-flex justify-content-between align-items-center p-1 px-2">
                                 <div class="d-flex">
-                                    <div class="me-2 fs14">${item.date}</div>
-                                    <div class="fs14"> - ${item.tekananDarah} - <span class="fw-bold fs14">${item.hasilTekananDarah}</span></div>
+                                    <div class="me-2 fs12">${item.date}</div>
+                                    <div class="fs12"> - ${item.tekananDarah} - <span class="fw-bold fs12">${item.hasilTekananDarah}</span></div>
                                 </div>
-                                <button class="btn btn-link text-danger fs14 font-weight-bold" onclick="deleteTekananDarah(${i})">
+                                <button class="btn btn-link text-danger fs12 font-weight-bold" onclick="deleteTekananDarah(${i})">
                                     &times;
                                 </button>
                             </div>
@@ -172,10 +174,10 @@
                         <div class="card mb-1">
                             <div class="card-body d-flex justify-content-between align-items-center p-1 px-2">
                                 <div class="d-flex">
-                                    <div class="me-2 fs14">${item.date}</div>
-                                    <div class="fs14"> -  ${item.denyutJantungJanin}x/menit - <span class="fw-bold fs14">${item.hasilDenyutJantungJanin}</span></div>
+                                    <div class="me-2 fs12">${item.date}</div>
+                                    <div class="fs12"> -  ${item.denyutJantungJanin}x/menit - <span class="fw-bold fs12">${item.hasilDenyutJantungJanin}</span></div>
                                 </div>
-                                <button class="btn btn-link text-danger fs14 font-weight-bold" onclick="deleteDenyutJantungJanin(${i})">
+                                <button class="btn btn-link text-danger fs12 font-weight-bold" onclick="deleteDenyutJantungJanin(${i})">
                                     &times;
                                 </button>
                             </div>

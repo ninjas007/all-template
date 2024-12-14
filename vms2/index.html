@@ -12,129 +12,116 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
 
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <link rel="stylesheet" href="css/style.css">
     <style>
         table tr td {
             vertical-align: bottom !important;
-            padding: 4px 0 !important;
-        }
-
-        .bg-second2 {
-            background-color: #f5f6f8 !important;
+            padding: 5px 0 !important;
         }
 
         .c-box-shadow {
             box-shadow: 0 7px 9px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            padding: 0.8rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .body-wrap {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .body-content {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .btn-primary {
+            background-color: #1966a0 !important;
+        }
+
+        .text-primary {
+            color: #1966a0 !important;
         }
     </style>
 </head>
 
 <body class="fade-in">
     <div id="wrapper">
-        <div class="body-wrap bg-second2 c-box-shadow">
+        <div class="body-wrap c-box-shadow">
             <div class="body">
-                <div class="body-header bg-white" style="border-bottom: 1px solid #dee2e6">
-                    <div class="body-header-content text-primary">
-                        <b class="h5">Data Visitor</b>
-                    </div>
-                </div>
-                <div class="body-content bg-second2" style="padding-bottom: 70px">
-                    <div class="row px-3 mb-3">
-                        <div class="col-12">
-                            <div class="card h-100 pt-2">
-                                <div class="card-header pb-0 border-bottom-0">
-                                    <b class="h5 text-primary">Data Pribadi</b>
-                                    <div class="pb-3 border-bottom"></div>
-                                </div>
-                                <div class="card-body pt-3">
+                <div class="body-content">
+                    <div class="row px-3">
+                        <div class="col-12 mb-5" style="margin-top: -70px">
+                            <div class="px-3 text-center">
+                                <img src="images/BI_Logo.png" class="img-fluid" style="opacity: 0.9; width: 70%">
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class="p-4 border rounded h-100">
+                                <div class="card-body">
                                     <table style="width: 100%">
                                         <tr>
-                                            <td>Nama Visitor</td>
-                                            <td align="right">Adrian Hans Saputra Utama</td>
+                                            <td colspan="3" class="text-primary text-center">
+                                                <h4>Adrian Hans Saputra Hutama</h4>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td>Email</td>
-                                            <td align="right">adrian@mail.com</td>
+                                            <td class="fw-bold">PIC</td>
+                                            <td class="text-primary text-end">Nita</td>
                                         </tr>
                                         <tr>
-                                            <td>PIC</td>
-                                            <td align="right">Nita</td>
+                                            <td class="fw-bold">Kode</td>
+                                            <td class="text-primary text-end">301 - 106</td>
                                         </tr>
                                         <tr>
-                                            <td>Kode</td>
-                                            <td align="right">301 - 106</td>
-                                        </tr>
-                                        <tr>
-                                            <td>No. HP</td>
-                                            <td align="right">08111 111 1111</td>
-                                        </tr>
-                                        <tr>
-                                            <td>NIK</td>
-                                            <td align="right">1323232323232323</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Durasi</td>
-                                            <td align="right">11.00 - 13.00 (2h)</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tanggal Kunjungan</td>
-                                            <td align="right">10 Agustus 2024</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Lokasi</td>
-                                            <td align="right">Karawang</td>
+                                            <td class="fw-bold">Lokasi</td>
+                                            <td class="text-primary text-end">Karawang</td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row px-3">
+                        <div class="col-12 mb-4">
+                            <a href="input.html" class="btn btn-primary btn-lg btn-block text-center text-white">
+                                <i class="fa fa-play"></i> Start Visit
+                            </a>
+                        </div>
                         <div class="col-12">
-                            <div class="card h-100 pt-2">
-                                <div class="card-header pb-0 border-bottom-0">
-                                    <b class="h5 text-primary">QR Code</b>
-                                    <div class="pb-3 border-bottom"></div>
-                                </div>
-                                <div class="card-body pt-3">
-                                    <div class="text-center">
-                                        <img src="images/qrcode.png" class="img-fluid">
-                                    </div>
-                                </div>
+                            <div class="text-center">
+                                <img src="images/qrcode.png" class="img-fluid">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <nav class="navbar-wrap border-top">
-            <div class="menubar-footer">
-                <a href="index.html">
-                    <button class="btn-menubar">
-                        <i class="fa fa-user text-dark menu-icon active-menu"></i>
-                        <span class="text-dark menu-title active-menu">Visitor</span>
-                    </button>
-                </a>
-                <a href="visitor.html">
-                    <button class="btn-menubar">
-                        <i class="fa fa-car text-dark menu-icon"></i>
-                        <span class="text-dark menu-title">Parking</span>
-                    </button>
-                </a>
-                <a href="meeting.html">
-                    <button class="btn-menubar">
-                        <i class="fas fa-users text-dark menu-icon"></i>
-                        <span class="text-dark menu-title">Meeting</span>
-                    </button>
-                </a>
-            </div>
-        </nav>
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="js/fade.js"></script>
 </body>
