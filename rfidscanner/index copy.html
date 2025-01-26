@@ -28,24 +28,12 @@
             border: 1px solid #ddd;
             text-align: center;
         }
-
-        input{
-            color: #ffffff !important; 
-            border: none !important;
-            margin-top: -100px;
-        }
-
-        input:focus {
-            color: #ffffff !important; 
-            border: none;
-            margin-top: -100px;
-        }
     </style>
 </head>
 
 <body>
-    <!-- <h1>Enter Card</h1> -->
-    <input type="text" id="cardNumber"  autofocus>
+    <h1>Enter Card</h1>
+    <input type="text" id="cardNumber" placeholder="Card Number" autofocus>
     <br>
     <br>
     <video id="video" autoplay></video>
@@ -71,9 +59,6 @@
         const cardNumberInput = document.getElementById("cardNumber");
         const staticPhoneNumber = "6281371458031"; // Nomor WhatsApp statis
 
-        // Key untuk localStorage
-        const LOCAL_STORAGE_KEY = "scannedData";
-
         // Access the webcam
         async function startWebcam() {
             try {
@@ -82,25 +67,6 @@
             } catch (error) {
                 console.error("Error accessing webcam:", error);
             }
-        }
-
-        // Load data from localStorage
-        function loadDataFromLocalStorage() {
-            const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
-            if (storedData) {
-                const dataArray = JSON.parse(storedData);
-                dataArray.forEach(data => {
-                    addRowToTable(data.time, data.imageUrl, data.cardNumber);
-                });
-            }
-        }
-
-        // Save data to localStorage
-        function saveDataToLocalStorage(time, imageUrl, cardNumber) {
-            const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
-            const dataArray = storedData ? JSON.parse(storedData) : [];
-            dataArray.unshift({ time, imageUrl, cardNumber }); // Add new data to the start of the array
-            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(dataArray));
         }
 
         // Capture image and display in table
@@ -123,9 +89,6 @@
             // Update table with captured data
             addRowToTable(currentTime, dataUrl, cardNumber);
 
-            // Save data to localStorage
-            saveDataToLocalStorage(currentTime, dataUrl, cardNumber);
-
             // Clear the input field
             cardNumberInput.value = "";
 
@@ -134,9 +97,8 @@
             audio.play();
 
             // Send image and card number to WhatsApp
-            setTimeout(() => {
-                sendWhatsAppMessage(staticPhoneNumber, cardNumber, dataUrl);
-            }, 1000); // Delay 1 second
+            await sendWhatsAppMessage(staticPhoneNumber, cardNumber, dataUrl);
+            return false;
         }
 
         // Function to add captured data to the table
@@ -168,6 +130,8 @@
             } catch (error) {
                 console.error("Error saat mengirim gambar:", error);
             }
+
+            return false;
         }
 
         // Listen for Enter keypress in the input
@@ -188,9 +152,8 @@
             console.warn("Form submission prevented.");
         });
 
-        // Initialize webcam and load stored data
+        // Initialize webcam
         startWebcam();
-        loadDataFromLocalStorage();
     </script>
 </body>
 
